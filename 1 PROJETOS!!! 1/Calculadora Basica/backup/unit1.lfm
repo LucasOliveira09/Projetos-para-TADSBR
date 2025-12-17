@@ -1,0 +1,69 @@
+object Form1: TForm1
+  Left = 1076
+  Height = 680
+  Top = 93
+  Width = 833
+  Caption = 'Form1'
+  ClientHeight = 680
+  ClientWidth = 833
+  LCLVersion = '4.4.0.0'
+  object Button1: TButton
+    Left = 211
+    Height = 100
+    Top = 408
+    Width = 467
+    Caption = 'Calcular'
+    Font.Height = -40
+    ParentFont = False
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object ResultadoCalc: TLabel
+    Left = 608
+    Height = 89
+    Top = 304
+    Width = 36
+    Caption = '0'
+    Font.Height = -67
+    ParentFont = False
+    OnClick = ResultadoCalcClick
+  end
+  object num1: TEdit
+    Left = 211
+    Height = 45
+    Top = 224
+    Width = 160
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 1
+    OnChange = num1Change
+  end
+  object num2: TEdit
+    Left = 518
+    Height = 45
+    Top = 224
+    Width = 160
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 2
+    OnChange = num1Change
+  end
+  object Sinal: TComboBox
+    Left = 408
+    Height = 45
+    Top = 224
+    Width = 72
+    Font.Height = -27
+    ItemHeight = 37
+    Items.Strings = (
+      '*'
+      '+'
+      '-'
+      '/'
+    )
+    ParentFont = False
+    TabOrder = 3
+    Text = 'Sinal'
+    OnChange = SinalChange
+  end
+end

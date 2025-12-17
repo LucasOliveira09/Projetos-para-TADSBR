@@ -1,0 +1,125 @@
+object Form1: TForm1
+  Left = 988
+  Height = 662
+  Top = 107
+  Width = 834
+  Caption = 'Form1'
+  ClientHeight = 662
+  ClientWidth = 834
+  LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 644
+    Top = 64
+    Width = 834
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object buscar: TEdit
+    Left = 184
+    Height = 63
+    Top = 0
+    Width = 336
+    Font.Height = 55
+    ParentFont = False
+    TabOrder = 1
+    OnChange = buscarChange
+  end
+  object Button1: TButton
+    Left = 0
+    Height = 64
+    Top = -1
+    Width = 184
+    Caption = 'Resetar'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 520
+    Height = 64
+    Top = 0
+    Width = 312
+    Caption = 'Buscar'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    DisableSavepoints = False
+    HostName = 'localhost'
+    Port = 0
+    Database = 'C:\Users\Luquinhas\Desktop\dbtest\BIBLIOTECAEX.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird'
+    Left = 104
+    Top = 104
+  end
+  object clientes: TZQuery
+    Connection = ZConnection1
+    UpdateObject = ZUpdateSQL1
+    SQL.Strings = (
+      'SELECT * FROM LIVROS'
+    )
+    Params = <>
+    Left = 96
+    Top = 184
+  end
+  object DataSource1: TDataSource
+    DataSet = clientes
+    OnDataChange = DataSource1DataChange
+    Left = 296
+    Top = 184
+  end
+  object ZUpdateSQL1: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM CLIENTES'
+      'WHERE'
+      '  CLIENTES.ID = :OLD_ID'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO CLIENTES'
+      '  (ID, NOME, EMAIL, TELEFONE, DATA_CADASTRO)'
+      'VALUES'
+      '  (:ID, :NOME, :EMAIL, :TELEFONE, :DATA_CADASTRO)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE CLIENTES SET'
+      '  ID = :ID,'
+      '  NOME = :NOME,'
+      '  EMAIL = :EMAIL,'
+      '  TELEFONE = :TELEFONE,'
+      '  DATA_CADASTRO = :DATA_CADASTRO'
+      'WHERE'
+      '  CLIENTES.ID = :OLD_ID'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    Left = 313
+    Top = 123
+    ParamData = <    
+      item
+        Name = 'ID'
+      end    
+      item
+        Name = 'NOME'
+      end    
+      item
+        Name = 'EMAIL'
+      end    
+      item
+        Name = 'TELEFONE'
+      end    
+      item
+        Name = 'DATA_CADASTRO'
+      end    
+      item
+        Name = 'OLD_ID'
+      end>
+  end
+end
