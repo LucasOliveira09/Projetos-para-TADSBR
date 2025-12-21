@@ -1,0 +1,22 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 663
+  HorizontalOffset = 1043
+  VerticalOffset = 104
+  Width = 530
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    AfterConnect = ZConnection1AfterConnect
+    DisableSavepoints = False
+    Port = 3050
+    Database = 'C:\Users\Luquinhas\Desktop\RepositoriosGitHub\Projetos-para-TADSBR\1 PROJETOS!!! 1\Projeto 6, CRUD\CRUD.FDB'
+    User = 'SYSDBA'
+    Password = 'masterkey'
+    Protocol = 'firebird'
+    Left = 32
+    Top = 40
+  end
+end

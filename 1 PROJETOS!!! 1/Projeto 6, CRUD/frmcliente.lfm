@@ -1,0 +1,72 @@
+object FormCliente: TFormCliente
+  Left = 1018
+  Height = 670
+  Top = 101
+  Width = 893
+  Caption = 'FormCliente'
+  ClientHeight = 670
+  ClientWidth = 893
+  LCLVersion = '4.4.0.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 168
+    Top = 72
+    Width = 696
+    Color = clWindow
+    Columns = <>
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 24
+    Height = 62
+    Top = 0
+    Width = 436
+    Caption = 'Sistema do Luquinha'
+    Font.Height = -47
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object Button1: TButton
+    Left = 696
+    Height = 169
+    Top = 71
+    Width = 197
+    Caption = 'OK'
+    Font.Height = -53
+    ParentFont = False
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 480
+    Height = 73
+    Top = -1
+    Width = 91
+    Caption = 'Criar'
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 584
+    Height = 72
+    Top = 0
+    Width = 88
+    Caption = 'Atualizar'
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 680
+    Height = 72
+    Top = 0
+    Width = 88
+    Caption = 'Deletar'
+    TabOrder = 4
+  end
+  object Button5: TButton
+    Left = 776
+    Height = 73
+    Top = -1
+    Width = 99
+    Caption = 'Buscar'
+    TabOrder = 5
+  end
+end

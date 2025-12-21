@@ -1,0 +1,8 @@
+object FormCliente: TFormCliente
+  Left = 1018
+  Height = 670
+  Top = 101
+  Width = 893
+  Caption = 'FormCliente'
+  LCLVersion = '4.4.0.0'
+end
