@@ -14,7 +14,7 @@ uses
   uCliente,
   uClienteController,
   uClienteDAO,
-  frmCliente, zcomponent;
+  frmCliente, uModuloDados;
 
 {$R *.res}
 

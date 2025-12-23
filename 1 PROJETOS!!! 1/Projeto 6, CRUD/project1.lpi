@@ -96,6 +96,9 @@
       <Item>
         <Name Value="EZDatabaseError"/>
       </Item>
+      <Item>
+        <Name Value="EConvertError"/>
+      </Item>
     </Exceptions>
   </Debugging>
 </CONFIG>

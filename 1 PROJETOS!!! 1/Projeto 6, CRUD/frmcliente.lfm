@@ -4,8 +4,8 @@ object FormCliente: TFormCliente
   Top = 0
   Width = 856
   Caption = 'FormCliente'
-  ClientHeight = 1048
-  ClientWidth = 856
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
   object InserirButton: TButton

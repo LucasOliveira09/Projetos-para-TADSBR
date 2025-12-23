@@ -23,8 +23,6 @@ type
 
 implementation
 
-{$R *.lfm}
-
 constructor TCliente.Create(ID, Telefone: Integer; Nome, Email: String);
 begin
   FID := ID;

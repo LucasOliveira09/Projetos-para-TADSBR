@@ -6,7 +6,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, DB, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Grids, DBGrids, uCliente, uClienteDAO, uModuloDados, uClienteController;
+  Dialogs, StdCtrls, Grids, DBGrids, uCliente, uClienteDAO, uModuloDados, uClienteController, uClienteService;
 
 type
 
@@ -119,25 +119,25 @@ begin
   begin
     InserirInput1.Visible := True; InserirInput2.Visible := True; InserirInput3.Visible := True;
     InserirLabel1.Visible := True; InserirLabel2.Visible := True; InserirLabel3.Visible := True; InserirLabel4.Visible := True;
-    InserirButton.Visible := True; // Mostra o botão de confirmar inserção
+    InserirButton.Visible := True;
   end
   else if Acao = 'Buscar' then
   begin
     BuscarInput.Visible := True;
     BuscarLabel.Visible := True;
-    BuscarButton.Visible := True; // Mostra o botão de confirmar busca
+    BuscarButton.Visible := True;
   end
   else if Acao = 'Atualizar' then
   begin
     AtualizarInput1.Visible := True; AtualizarInput2.Visible := True; AtualizarInput3.Visible := True; AtualizarInput4.Visible := True;
     AtualizarLabel1.Visible := True; AtualizarLabel2.Visible := True; AtualizarLabel3.Visible := True; AtualizarLabel4.Visible := True; AtualizarLabel5.Visible := True;
-    AtualizarButton.Visible := True; // Mostra o botão de confirmar atualização
+    AtualizarButton.Visible := True;
   end
   else if Acao = 'Deletar' then
   begin
     DeletarInput.Visible := True;
     DeletarLabel.Visible := True;
-    DeletarButton.Visible := True; // Mostra o botão de confirmar deleção
+    DeletarButton.Visible := True;
   end;
 end;
 
@@ -151,8 +151,9 @@ end;
 procedure TFormCliente.InserirButtonClick(Sender: TObject);
   var
   Cliente: TCliente;
-  DAO: TClienteDAO;
+  Service: TClienteService;
 begin
+  Service := TClienteService.Create(DataModule2.ZConnection1);
   try
     Cliente := TCliente.Create(
       0,
@@ -161,64 +162,46 @@ begin
       InserirInput1.Text
     );
 
-
-    DAO := TClienteDAO.Create(DataModule2.ZConnection1);
-
     try
 
-      DAO.Inserir(Cliente);
+      Service.CriarCliente(Cliente.Nome, Cliente.Email, Cliente.Telefone);
 
       ShowMessage('Cliente inserido com sucesso!');
 
       CarregarUsuarios;
       ComecarLimpo;
     finally
-
-      DAO.Free;
+      Service.Free;
     end;
-
   finally
-
     Cliente.Free;
   end;
 end;
 
 procedure TFormCliente.BuscarButtonClick(Sender: TObject);
   var
-  DAO : TClienteDAO;
-  Cliente : TCLiente;
   Id : Integer;
+  Cliente: TCliente;
+  Service : TClienteService;
   Controller : TClienteController;
     begin
        Id := StrToInt(BuscarInput.Text);
-       DAO := TClienteDAO.Create(DataModule2.ZConnection1);
+       Service := TClienteService.Create(DataModule2.ZConnection1);
+
        try
-        Cliente := DAO.ProcurarPorId(Id);
-
-        if Cliente <> nil then
-    try
-      ShowMessage('Cliente encontrado: ' + Controller.FormatarParaExibicao(Cliente));
-
-      InserirInput1.Text := Cliente.Nome;
-      InserirInput2.Text := Cliente.Email;
-      InserirInput3.Text := IntToStr(Cliente.Telefone);
-    finally
-      Cliente.Free;
-    end
-    else
-      ShowMessage('Nenhum cliente encontrado com o ID ' + IntToStr(Id));
-
-        ComecarLimpo;
-    finally
-      DAO.Free;
-    end;
+        Cliente := Service.BuscarPorID(Id);
+        ShowMessage('Cliente encontrado: ' + Controller.FormatarParaExibicao(Cliente));
+       finally
+       Service.Free;
+       end;
 end;
 
 procedure TFormCliente.AtualizarButtonClick(Sender: TObject);
   var
     Cliente: TCliente;
-    DAO: TClienteDAO;
+    Service: TClienteService;
   begin
+    Service := TClienteService.Create(DataModule2.ZConnection1);
     try
       Cliente := TCliente.Create(
         StrToInt(AtualizarInput4.Text),
@@ -227,12 +210,9 @@ procedure TFormCliente.AtualizarButtonClick(Sender: TObject);
         AtualizarInput2.Text
       );
 
-
-      DAO := TClienteDAO.Create(DataModule2.ZConnection1);
-
       try
 
-        DAO.Atualizar(Cliente);
+        Service.AtualizarCliente(Cliente);
 
         ShowMessage('Cliente atualizado com sucesso!');
 
@@ -240,7 +220,7 @@ procedure TFormCliente.AtualizarButtonClick(Sender: TObject);
         ComecarLimpo;
       finally
 
-        DAO.Free;
+        Service.Free;
       end;
 
     finally
@@ -251,13 +231,13 @@ end;
 
 procedure TFormCliente.DeletarButtonClick(Sender: TObject);
 var
-DAO : TClienteDAO;
+Service : TClienteService;
 Id : Integer;
 begin
      Id := StrToIntDef(DeletarInput.Text, 0);
-     DAO := TClienteDAO.Create(DataModule2.ZConnection1);
+     Service := TClienteService.Create(DataModule2.ZConnection1);
      try
-      DAO.Deletar(Id);
+      Service.Deletar(Id);
 
       ShowMessage('Cliente removido com sucesso!');
 
