@@ -16,6 +16,7 @@ type
     procedure Inserir(Cliente: TCliente);
     procedure Atualizar(Cliente: TCliente);
     procedure Deletar(ID: Integer);
+    procedure Carregar(aQuery: TZQuery);
     function ProcurarPorId(ID: Integer) : TCliente;
   end;
 
@@ -25,6 +26,14 @@ constructor TClienteDAO.Create(AConnection: TZConnection);
 begin
   FConnection := AConnection;
 end;
+
+procedure TClienteDAO.Carregar(aQuery: TZQuery);
+begin
+
+  aQuery.Close;
+  aQuery.SQL.Text := 'SELECT * FROM CLIENTES ORDER BY NOME';
+  aQuery.Open;
+ end;
 
 procedure TClienteDAO.Inserir(Cliente: TCliente);
 var
@@ -39,7 +48,6 @@ begin
     Query.ParamByName('EMAIL').AsString := Cliente.Email;
     Query.ParamByName('TELEFONE').AsInteger := Cliente.Telefone;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
@@ -58,7 +66,6 @@ begin
     Query.ParamByName('TELEFONE').AsInteger := Cliente.Telefone;
     Query.ParamByName('ID').AsInteger := Cliente.ID;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
@@ -74,7 +81,6 @@ begin
     Query.SQL.Add('DELETE FROM CLIENTES WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := ID;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
@@ -102,9 +108,10 @@ begin
         Query.FieldByName('NOME').AsString,
         Query.FieldByName('EMAIL').AsString
       );
-    Result := CShow;
+
 
     end;
+    Result := CShow;
   finally
     Query.Free;
   end;

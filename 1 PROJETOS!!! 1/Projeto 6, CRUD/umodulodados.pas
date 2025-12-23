@@ -5,13 +5,14 @@ unit uModuloDados;
 interface
 
 uses
-  Classes, SysUtils, ZConnection, ZDataset;
+  Classes, SysUtils, ZConnection, ZDataset, DB;
 
 type
 
   { TDataModule2 }
 
   TDataModule2 = class(TDataModule)
+    DataSource1: TDataSource;
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
   private

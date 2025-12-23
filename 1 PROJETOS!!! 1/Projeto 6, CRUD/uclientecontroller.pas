@@ -20,7 +20,7 @@ implementation
  function TClienteController.ValidarCliente(Cliente: TCliente): Boolean;
 begin
   Result := (Cliente.Nome <> '') and
-            (Pos('@', Cliente.Email) > 0) and (Cliente.Telefone >= 10000000);
+            (Pos('@', Cliente.Email) > 0);
 end;
 
  function TClienteController.FormatarParaExibicao(Cliente: TCliente): String;

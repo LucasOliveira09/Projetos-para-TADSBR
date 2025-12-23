@@ -17,8 +17,6 @@ type
 
 implementation
 
-{$R *.lfm}
-
  function TClienteController.ValidarCliente(Cliente: TCliente): Boolean;
 begin
   Result := (Cliente.Nome <> '') and

@@ -16,7 +16,8 @@ type
     procedure Inserir(Cliente: TCliente);
     procedure Atualizar(Cliente: TCliente);
     procedure Deletar(ID: Integer);
-    function ProcurarPorId(ID: Integer) : TCliente;
+    procedure Carregar(aQuery: TZQuery);
+    procedure ProcurarPorId(ID: Integer);
   end;
 
 implementation
@@ -26,6 +27,14 @@ begin
   FConnection := AConnection;
 end;
 
+procedure TClienteDAO.Carregar(aQuery: TZQuery);
+begin
+
+  aQuery.Close;
+  aQuery.SQL.Text := 'SELECT * FROM CLIENTES ORDER BY NOME';
+  aQuery.Open;
+ end;
+
 procedure TClienteDAO.Inserir(Cliente: TCliente);
 var
 Query: TZQuery;
@@ -34,12 +43,11 @@ begin
   try
     Query.Connection := FConnection;
     Query.SQL.Add('INSERT INTO CLIENTES (NOME, EMAIL, TELEFONE)');
-    Query.SQL.Add('VALUES (:NOME, :EMAIL :TELEFONE)');
+    Query.SQL.Add('VALUES (:NOME, :EMAIL, :TELEFONE)');
     Query.ParamByName('NOME').AsString := Cliente.Nome;
     Query.ParamByName('EMAIL').AsString := Cliente.Email;
     Query.ParamByName('TELEFONE').AsInteger := Cliente.Telefone;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
@@ -58,7 +66,6 @@ begin
     Query.ParamByName('TELEFONE').AsInteger := Cliente.Telefone;
     Query.ParamByName('ID').AsInteger := Cliente.ID;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
@@ -74,13 +81,12 @@ begin
     Query.SQL.Add('DELETE FROM CLIENTES WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := ID;
     Query.ExecSQL;
-    FConnection.Commit;
   finally
     Query.Free;
   end;
 end;
 
-function TClienteDAO.ProcurarPorId(ID: Integer): TCliente;
+procedure TClienteDAO.ProcurarPorId(ID: Integer);
 var
 Query: TZQuery;
 begin
@@ -90,7 +96,6 @@ begin
     Query.SQL.Add('SELECT * FROM CLIENTES WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := ID;
     Query.Open;
-
   finally
     Query.Free;
   end;

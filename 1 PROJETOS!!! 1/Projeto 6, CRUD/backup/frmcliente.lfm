@@ -1,8 +1,284 @@
 object FormCliente: TFormCliente
-  Left = 1018
-  Height = 670
-  Top = 101
-  Width = 893
+  Left = 1026
+  Height = 1048
+  Top = 0
+  Width = 856
   Caption = 'FormCliente'
+  ClientHeight = 1048
+  ClientWidth = 856
   LCLVersion = '4.4.0.0'
+  OnCreate = FormCreate
+  object InserirButton: TButton
+    Left = 347
+    Height = 169
+    Top = 537
+    Width = 197
+    Caption = 'OK'
+    Font.Height = -53
+    ParentFont = False
+    TabOrder = 0
+    OnClick = InserirButtonClick
+  end
+  object Button2: TButton
+    Left = 480
+    Height = 73
+    Top = -1
+    Width = 91
+    Caption = 'Criar'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 576
+    Height = 72
+    Top = -1
+    Width = 88
+    Caption = 'Atualizar'
+    TabOrder = 2
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 672
+    Height = 72
+    Top = 0
+    Width = 88
+    Caption = 'Deletar'
+    TabOrder = 3
+    OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 768
+    Height = 73
+    Top = -1
+    Width = 99
+    Caption = 'Buscar'
+    TabOrder = 4
+    OnClick = Button5Click
+  end
+  object InserirInput2: TEdit
+    Left = 24
+    Height = 45
+    Top = 360
+    Width = 176
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 5
+  end
+  object InserirLabel2: TLabel
+    Left = 24
+    Height = 37
+    Top = 320
+    Width = 73
+    Caption = 'Nome'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object InserirLabel3: TLabel
+    Left = 232
+    Height = 37
+    Top = 320
+    Width = 65
+    Caption = 'Email'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object InserirLabel4: TLabel
+    Left = 568
+    Height = 37
+    Top = 320
+    Width = 99
+    Caption = 'Telefone'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object InserirInput1: TEdit
+    Left = 232
+    Height = 45
+    Top = 360
+    Width = 312
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 6
+  end
+  object InserirInput3: TEdit
+    Left = 568
+    Height = 45
+    Top = 360
+    Width = 216
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 7
+  end
+  object BuscarInput: TEdit
+    Left = 224
+    Height = 45
+    Top = 360
+    Width = 320
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 8
+  end
+  object BuscarLabel: TLabel
+    Left = 208
+    Height = 54
+    Top = 256
+    Width = 391
+    Caption = 'Busque inserindo o ID'
+    Font.Height = -40
+    ParentFont = False
+  end
+  object InserirLabel1: TLabel
+    Left = 256
+    Height = 54
+    Top = 256
+    Width = 315
+    Caption = 'Insira um usuario!'
+    Font.Height = -40
+    ParentFont = False
+  end
+  object DeletarLabel: TLabel
+    Left = 240
+    Height = 54
+    Top = 304
+    Width = 324
+    Caption = 'Delete um usuario'
+    Font.Height = -40
+    ParentFont = False
+  end
+  object DeletarInput: TEdit
+    Left = 240
+    Height = 45
+    Top = 360
+    Width = 320
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 9
+  end
+  object AtualizarInput1: TEdit
+    Left = 56
+    Height = 45
+    Top = 456
+    Width = 176
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 10
+  end
+  object AtualizarInput2: TEdit
+    Left = 264
+    Height = 45
+    Top = 456
+    Width = 312
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 11
+  end
+  object AtualizarInput3: TEdit
+    Left = 600
+    Height = 45
+    Top = 456
+    Width = 216
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 12
+  end
+  object AtualizarLabel4: TLabel
+    Left = 56
+    Height = 37
+    Top = 416
+    Width = 73
+    Caption = 'Nome'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object AtualizarLabel3: TLabel
+    Left = 264
+    Height = 37
+    Top = 416
+    Width = 65
+    Caption = 'Email'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object AtualizarLabel5: TLabel
+    Left = 600
+    Height = 37
+    Top = 416
+    Width = 99
+    Caption = 'Telefone'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object AtualizarLabel1: TLabel
+    Left = 280
+    Height = 54
+    Top = 256
+    Width = 261
+    Caption = 'Atualize dados'
+    Font.Height = -40
+    ParentFont = False
+  end
+  object AtualizarInput4: TEdit
+    Left = 320
+    Height = 45
+    Top = 360
+    Width = 176
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 13
+  end
+  object AtualizarLabel2: TLabel
+    Left = 392
+    Height = 37
+    Top = 320
+    Width = 26
+    Caption = 'ID'
+    Font.Height = -27
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 24
+    Height = 62
+    Top = 0
+    Width = 436
+    Caption = 'Sistema do Luquinha'
+    Font.Height = -47
+    ParentFont = False
+    OnClick = Label1Click
+  end
+  object BuscarButton: TButton
+    Left = 568
+    Height = 170
+    Top = 536
+    Width = 200
+    Caption = 'BUSCAR'
+    TabOrder = 14
+    OnClick = BuscarButtonClick
+  end
+  object DeletarButton: TButton
+    Left = 136
+    Height = 169
+    Top = 537
+    Width = 192
+    Caption = 'DeletarButton'
+    TabOrder = 15
+    OnClick = DeletarButtonClick
+  end
+  object AtualizarButton: TButton
+    Left = 338
+    Height = 193
+    Top = 760
+    Width = 203
+    Caption = 'AtualizarButton'
+    TabOrder = 16
+    OnClick = AtualizarButtonClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 176
+    Top = 80
+    Width = 856
+    Color = clWindow
+    Columns = <>
+    TabOrder = 17
+  end
 end

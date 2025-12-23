@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
         <PackageName Value="zcomponentdesign"/>
       </Item>
       <Item>
@@ -89,6 +92,9 @@
       </Item>
       <Item>
         <Name Value="EFOpenError"/>
+      </Item>
+      <Item>
+        <Name Value="EZDatabaseError"/>
       </Item>
     </Exceptions>
   </Debugging>

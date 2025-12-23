@@ -1,8 +1,8 @@
 object DataModule2: TDataModule2
   OldCreateOrder = False
   Height = 287
-  HorizontalOffset = 1044
-  VerticalOffset = 105
+  HorizontalOffset = 530
+  VerticalOffset = 113
   Width = 831
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -17,5 +17,16 @@ object DataModule2: TDataModule2
     Protocol = 'firebird'
     Left = 100
     Top = 100
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Params = <>
+    Left = 168
+    Top = 100
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 224
+    Top = 104
   end
 end
