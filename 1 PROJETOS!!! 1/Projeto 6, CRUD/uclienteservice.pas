@@ -5,7 +5,7 @@ unit uClienteService;
 interface
 
 uses
-  Classes, SysUtils, uCliente, uClienteDAO, ZConnection, uClienteController;
+  Classes, SysUtils, uCliente, uClienteDAO, ZConnection;
 
 type
   TClienteService = class

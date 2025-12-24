@@ -152,6 +152,7 @@ procedure TFormCliente.InserirButtonClick(Sender: TObject);
   var
   Cliente: TCliente;
   Service: TClienteService;
+  Controller: TClienteController;
 begin
   Service := TClienteService.Create(DataModule2.ZConnection1);
   try
@@ -164,9 +165,10 @@ begin
 
     try
 
-      Service.CriarCliente(Cliente.Nome, Cliente.Email, Cliente.Telefone);
+      Controller.CriarCliente(Cliente.Nome, Cliente.Email, Cliente.Telefone);
 
-      ShowMessage('Cliente inserido com sucesso!');
+      if Controller.CriarCliente(Cliente.Nome, Cliente.Email, Cliente.Telefone) then
+      ShowMessage('secess');
 
       CarregarUsuarios;
       ComecarLimpo;
@@ -244,7 +246,7 @@ begin
       CarregarUsuarios;
       ComecarLimpo;
   finally
-    DAO.Free;
+    Service.Free;
   end;
 end;
 

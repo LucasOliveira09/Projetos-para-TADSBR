@@ -72,7 +72,7 @@ begin
     raise Exception.Create('ID inválido para busca!');
 
     Result := FDAO.ProcurarPorId(Id);
-end;]
+end;
 
 procedure TClienteService.Deletar(Id: Integer);
 begin

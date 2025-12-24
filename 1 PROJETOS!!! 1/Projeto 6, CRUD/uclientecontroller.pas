@@ -5,13 +5,16 @@ unit uClienteController;
 interface
 
 uses
-  uCliente, SysUtils;
+  uCliente, SysUtils, uClienteService;
 
 type
   TClienteController = class
+    private
+      Service : TClienteService;
   public
     function ValidarCliente(Cliente: TCliente): Boolean;
     function FormatarParaExibicao(Cliente: TCliente): String;
+    procedure CriarCliente(Nome, Email: String; Telefone: Integer);
   end;
 
 
@@ -29,6 +32,26 @@ end;
              'Nome: ' + Cliente.Nome + ' | ' +
              'Email: ' + Cliente.Email + ' | ' +
              'Telefone: ' + IntToStr(Cliente.Telefone);
+ end;
+
+
+
+ procedure TClienteController.CriarCliente(Nome, Email: String; Telefone: Integer);
+ var
+   Controller : TCLienteController;
+   Cliente: TCliente;
+ begin
+ Cliente := Cliente.Create(0, Telefone, Nome, Email);
+try
+  if not Controller.ValidarCliente(Cliente) then
+ raise Exception.Create('Cliente inválido!');
+
+  Service.CriarCliente(Cliente.Nome, Cliente.Email, Cliente.Telefone);
+ finally
+   Cliente.free
+ end;
+
+
  end;
 
 end.
