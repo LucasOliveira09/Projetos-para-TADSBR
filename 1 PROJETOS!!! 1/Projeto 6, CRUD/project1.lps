@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="21" Y="18"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -22,7 +22,7 @@
         <UnitName Value="uClienteController"/>
         <TopLine Value="26"/>
         <CursorPos X="12" Y="44"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -34,7 +34,8 @@
         <UnitName Value="uModuloDados"/>
         <EditorIndex Value="2"/>
         <CursorPos X="19" Y="11"/>
-        <UsageCount Value="38"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -45,7 +46,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="3"/>
         <CursorPos X="73" Y="26"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -61,12 +62,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmCliente"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="155"/>
+        <TopLine Value="151"/>
         <CursorPos Y="169"/>
         <ComponentState Value="1"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -95,10 +95,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="34"/>
-        <CursorPos X="39" Y="34"/>
-        <UsageCount Value="19"/>
+        <TopLine Value="88"/>
+        <CursorPos X="32" Y="102"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -117,12 +118,16 @@
       </Unit>
       <Unit>
         <Filename Value="uclienteservice.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteService"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="34"/>
-        <CursorPos X="78" Y="46"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="5"/>
+        <CursorPos X="23" Y="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">

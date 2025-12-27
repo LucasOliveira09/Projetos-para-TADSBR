@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <CursorPos X="21" Y="18"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -20,10 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteController"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="26"/>
         <CursorPos X="12" Y="44"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -35,7 +34,7 @@
         <UnitName Value="uModuloDados"/>
         <EditorIndex Value="2"/>
         <CursorPos X="19" Y="11"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -46,7 +45,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="3"/>
         <CursorPos X="73" Y="26"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -64,9 +63,9 @@
         <UnitName Value="frmCliente"/>
         <EditorIndex Value="4"/>
         <TopLine Value="151"/>
-        <CursorPos X="77" Y="168"/>
+        <CursorPos Y="169"/>
         <ComponentState Value="1"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -98,7 +97,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="34"/>
         <CursorPos X="39" Y="34"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -118,18 +117,15 @@
       <Unit>
         <Filename Value="uclienteservice.pas"/>
         <UnitName Value="uClienteService"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <TopLine Value="34"/>
-        <CursorPos X="78" Y="46"/>
-        <UsageCount Value="11"/>
+        <CursorPos X="78" Y="49"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="uclienteservice.pas"/>
-        <Caret Line="51" TopLine="34"/>
-      </Position>
       <Position>
         <Filename Value="frmcliente.pas"/>
         <Caret Line="160" Column="36" TopLine="149"/>
@@ -245,6 +241,10 @@
       <Position>
         <Filename Value="uclientecontroller.pas"/>
         <Caret Line="54" Column="16" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="44" Column="12" TopLine="26"/>
       </Position>
     </JumpHistory>
     <RunParams>
