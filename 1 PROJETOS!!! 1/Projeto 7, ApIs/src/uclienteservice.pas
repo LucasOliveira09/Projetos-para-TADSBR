@@ -5,7 +5,7 @@ unit uClienteService;
 interface
 
 uses
-  Classes, SysUtils, uCliente, uClienteDAO, ZConnection;
+  Classes, SysUtils, uCliente, uClienteDAO, ZConnection, fpjson, jsonparser, Generics.Collections;
 
 type
   TClienteService = class
@@ -20,6 +20,9 @@ type
     function BuscarPorID(Id: Integer): TCliente;
     function ValidarDados(Nome, Email: String; Telefone: Integer): Boolean;
     procedure Deletar(Id: Integer);
+    function BuscarPorNome(Nome : String): TJSONArray;
+    function CarregarClientes : TJSONArray;
+
   end;
 
 implementation
@@ -82,12 +85,58 @@ begin
     FDAO.Deletar(Id);
 end;
 
-function TClienteService.BuscarPorNome(Nome : String): TCliente;
+function TClienteService.BuscarPorNome(Nome : String): TJSONArray;
+var
+  Lista : TListaClientes;
+  JSONObject: TJSONObject;
+  JSONArray: TJSONArray;
+  Cliente : TCliente;
 begin
-  if Id <= 0 then
-    raise Exception.Create('ID inválido para busca!');
+  Lista :=  FDAO.ProcurarPorNome(Nome);
+  try
+  JSONArray := TJSONArray.Create;
 
-    Result := FDAO.ProcurarPorId(Id);
+  for Cliente in Lista do
+    begin
+        JSONObject := TJSONObject.Create;
+        JSONObject.Add('id', Cliente.ID);
+        JSONObject.Add('telefone', Cliente.Telefone);
+        JSONObject.Add('nome', Cliente.Nome);
+        JSONObject.Add('email', Cliente.Email);
+        JSONArray.Add(JSONObject);
+    end;
+
+    Result := JSONArray;
+  finally
+    Lista.Free;
+  end;
+end;
+
+function TClienteService.CarregarClientes : TJSONArray;
+var
+  Lista : TListaClientes;
+  JSONObject: TJSONObject;
+  JSONArray: TJSONArray;
+  Cliente : TCliente;
+begin
+  Lista :=  FDAO.CarregarClientes;
+  try
+  JSONArray := TJSONArray.Create;
+
+  for Cliente in Lista do
+    begin
+        JSONObject := TJSONObject.Create;
+        JSONObject.Add('id', Cliente.ID);
+        JSONObject.Add('telefone', Cliente.Telefone);
+        JSONObject.Add('nome', Cliente.Nome);
+        JSONObject.Add('email', Cliente.Email);
+        JSONArray.Add(JSONObject);
+    end;
+
+    Result := JSONArray;
+  finally
+    Lista.Free;
+  end;
 end;
 
 end.

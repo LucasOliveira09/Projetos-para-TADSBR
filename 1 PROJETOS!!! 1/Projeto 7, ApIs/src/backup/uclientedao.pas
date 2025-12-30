@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, uCliente, ZDataset, ZConnection, Generics.Collections;
 
 type
-  TListaClientes = TObjectList<TCliente>;
+  TListaClientes = specialize TObjectList<TCliente>;
   TClienteDAO = class
   private
     FConnection: TZConnection;
@@ -17,7 +17,7 @@ type
     procedure Inserir(Cliente: TCliente);
     procedure Atualizar(Cliente: TCliente);
     procedure Deletar(ID: Integer);
-    procedure Carregar(aQuery: TZQuery);
+    function CarregarClientes : TListaClientes;;
     function ProcurarPorId(ID: Integer) : TCliente;
     function ProcurarPorNome(Nome : String) : TListaClientes;
   end;
@@ -28,14 +28,6 @@ constructor TClienteDAO.Create(AConnection: TZConnection);
 begin
   FConnection := AConnection;
 end;
-
-procedure TClienteDAO.Carregar(aQuery: TZQuery);
-begin
-
-  aQuery.Close;
-  aQuery.SQL.Text := 'SELECT * FROM CLIENTES ORDER BY NOME';
-  aQuery.Open;
- end;
 
 procedure TClienteDAO.Inserir(Cliente: TCliente);
 var
@@ -130,6 +122,38 @@ function TClienteDAO.ProcurarPorNome(Nome : String) : TListaClientes;
   Query.Connection := FConnection;
     Query.SQL.Add('SELECT * FROM CLIENTES WHERE UPPER(NOME) LIKE :Nome');
     Query.ParamByName('Nome').AsString := '%' + UpperCase(Nome) + '%';
+    Query.Open;
+
+    while not Query.EOF do
+    begin
+      Cliente := TCliente.Create(
+        Query.FieldByName('ID').AsInteger,
+        Query.FieldByName('TELEFONE').AsInteger,
+        Query.FieldByName('NOME').AsString,
+        Query.FieldByName('EMAIL').AsString
+      );
+
+      Result.Add(Cliente);
+
+      Query.Next;
+      end;
+
+
+  finally
+       Query.Free;
+  end;
+end;
+
+function TClienteDAO.CarregarClientes : TListaClientes;
+  var
+  Query: TZQuery;
+  Cliente: TCliente;
+  begin
+  Query := TZQuery.Create(nil);
+  Result := TListaClientes.Create(True);
+  try
+  Query.Connection := FConnection;
+    Query.SQL.Add('SELECT * FROM CLIENTES');
     Query.Open;
 
     while not Query.EOF do

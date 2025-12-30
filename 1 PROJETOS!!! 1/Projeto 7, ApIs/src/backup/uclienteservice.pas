@@ -5,7 +5,7 @@ unit uClienteService;
 interface
 
 uses
-  Classes, SysUtils, uCliente, uClienteDAO, ZConnection;
+  Classes, SysUtils, uCliente, uClienteDAO, ZConnection, fpjson, jsonparser, Generics.Collections;
 
 type
   TClienteService = class
@@ -20,6 +20,8 @@ type
     function BuscarPorID(Id: Integer): TCliente;
     function ValidarDados(Nome, Email: String; Telefone: Integer): Boolean;
     procedure Deletar(Id: Integer);
+    function BuscarPorNome(Nome : String): TJSONArray;
+
   end;
 
 implementation
@@ -80,6 +82,33 @@ begin
     raise Exception.Create('ID inválido para deletar!');
 
     FDAO.Deletar(Id);
+end;
+
+function TClienteService.BuscarPorNome(Nome : String): TJSONArray;
+var
+  Lista : TListaClientes;
+  JSONObject: TJSONObject;
+  JSONArray: TJSONArray;
+  Cliente : TCliente;
+begin
+  Lista :=  FDAO.ProcurarPorNome(Nome);
+  try
+  JSONArray := TJSONArray.Create;
+
+  for Cliente in Lista do
+    begin
+        JSONObject := TJSONObject.Create;
+        JSONObject.Add('id', Cliente.ID);
+        JSONObject.Add('telefone', Cliente.Telefone);
+        JSONObject.Add('nome', Cliente.Nome);
+        JSONObject.Add('email', Cliente.Email);
+        JSONArray.Add(JSONObject);
+    end;
+
+    Result := JSONArray;
+  finally
+    Lista.Free;
+  end;
 end;
 
 end.

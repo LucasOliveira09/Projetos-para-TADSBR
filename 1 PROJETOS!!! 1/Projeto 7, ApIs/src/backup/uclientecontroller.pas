@@ -9,6 +9,7 @@ uses
 
 procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure GetCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
+procedure GetClienteNome(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure PostCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure PutCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure DeleteCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
@@ -65,15 +66,14 @@ begin
   try
     ID := Req.Params.Items['id'];
     JSONObject := TJSONObject.Create;
-
     try
-      Cliente := Service.BuscarPorId(StrToInt(ID));
+      Cliente := Service.BuscarPorID(StrToInt(ID));
       begin
+        JSONObject := TJSONObject.Create;
         JSONObject.Add('id', Cliente.ID);
         JSONObject.Add('telefone', Cliente.Telefone);
         JSONObject.Add('nome', Cliente.Nome);
         JSONObject.Add('email', Cliente.Email);
-
 
         Res.ContentType('application/json');
         Res.Send(JSONObject.AsJSON);
@@ -92,31 +92,20 @@ end;
 procedure GetClienteNome(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   Service : TClienteService;
-  JSONObject: TJSONObject;
+  JSONArray: TJSONArray;
   Nome : string;
-  Cliente : TCliente;
 begin
   Service := TClienteService.Create(DataModule2.ZConnection1);
   try
     Nome := Req.Params.Items['nome'];
-    JSONObject := TJSONObject.Create;
-
     try
-      Cliente := Service.BuscarPorNome(Nome);
-      begin
-        JSONObject.Add('id', Cliente.ID);
-        JSONObject.Add('telefone', Cliente.Telefone);
-        JSONObject.Add('nome', Cliente.Nome);
-        JSONObject.Add('email', Cliente.Email);
-
+      JSONArray := Service.BuscarPorNome(Nome);
 
         Res.ContentType('application/json');
-        Res.Send(JSONObject.AsJSON);
-      end
-
+        Res.Send(JSONArray.AsJSON);
     finally
       Service.Free;
-      JSONObject.Free;
+      JSONArray.Free;
     end;
   except
     on E: Exception do
@@ -127,7 +116,6 @@ end;
 procedure PostCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   JSONBody: TJSONObject;
-  Query: TZQuery;
   Nome, Email, telefone: String;
   Service : TClienteService;
 begin
@@ -210,10 +198,4 @@ begin
       Res.Status(400).Send('Erro: ' + E.Message);
   end;
 end;
-
-initialization
-
-finalization
-  GConnection.Free;
-
 end.
