@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="project1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <CursorPos X="53" Y="30"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclientecontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uClienteController"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="89"/>
+        <CursorPos X="34" Y="105"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umodulodados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule2"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uModuloDados"/>
+        <EditorIndex Value="3"/>
+        <CursorPos Y="32"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucliente.pas"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uCliente"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="3"/>
+        <CursorPos Y="35"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucliente.lfm"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="23" Y="4"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frmcliente.pas"/>
+        <ComponentName Value="FormCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="frmCliente"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="149"/>
+        <CursorPos X="63" Y="157"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="frmcliente.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclientecontroller.lfm"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="25" Y="3"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclientedao.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclientedao.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uClienteDAO"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="31" Y="11"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="D:\Luquinha\Downloads\zeosdbo-8.0.0-stable\src\component\ZDatasetParam.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="3572"/>
+        <CursorPos X="19" Y="3588"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umodulodados.lfm"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclienteservice.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uClienteService"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="53"/>
+        <CursorPos X="18" Y="65"/>
+        <UsageCount Value="12"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\Projeto 6, CRUD\uclientecontroller.pas"/>
+        <UnitName Value="uClienteController"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\Projeto 6, CRUD\frmcliente.pas"/>
+        <UnitName Value="frmCliente"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="131"/>
+        <CursorPos X="63" Y="157"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\Projeto 4, busca com filtro Sql\unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="57"/>
+        <CursorPos X="60" Y="80"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="46" Column="2" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="43" Column="9" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="42" Column="29" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="17" Column="15"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="41" Column="36" TopLine="18"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="54" Column="16" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="44" Column="12" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="ucliente.pas"/>
+        <Caret Line="11" Column="38" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="uclienteservice.pas"/>
+        <Caret Line="6" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="25" Column="38"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="115" Column="61" TopLine="99"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="202" Column="15" TopLine="175"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="138" Column="63" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="umodulodados.pas"/>
+        <Caret Line="12" Column="25"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="19" Column="33" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="79" Column="27" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="70" Column="40" TopLine="53"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="66" Column="43" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="70" Column="52" TopLine="56"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="131" Column="49" TopLine="105"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="142" Column="33" TopLine="116"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="11" Column="9"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="124" Column="28" TopLine="101"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="120" Column="65" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="8" Column="75"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="120" Column="22" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="123" Column="21" TopLine="104"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="21" Column="58" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="122" Column="69" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="11" Column="31"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

@@ -20,6 +20,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteController"/>
+        <IsVisibleTab Value="True"/>
         <TopLine Value="26"/>
         <CursorPos X="12" Y="44"/>
         <UsageCount Value="40"/>
@@ -33,7 +34,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uModuloDados"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="19" Y="11"/>
+        <CursorPos X="18" Y="4"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -44,7 +45,7 @@
         <UnitName Value="uCliente"/>
         <EditorIndex Value="1"/>
         <TopLine Value="3"/>
-        <CursorPos X="73" Y="26"/>
+        <CursorPos Y="35"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
@@ -63,7 +64,7 @@
         <UnitName Value="frmCliente"/>
         <EditorIndex Value="4"/>
         <TopLine Value="151"/>
-        <CursorPos Y="169"/>
+        <CursorPos X="28" Y="159"/>
         <ComponentState Value="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -95,10 +96,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="34"/>
-        <CursorPos X="39" Y="34"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="D:\Luquinha\Downloads\zeosdbo-8.0.0-stable\src\component\ZDatasetParam.pas"/>
@@ -116,24 +116,19 @@
       </Unit>
       <Unit>
         <Filename Value="uclienteservice.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteService"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="34"/>
-        <CursorPos X="78" Y="49"/>
+        <TopLine Value="53"/>
+        <CursorPos X="5" Y="85"/>
         <UsageCount Value="12"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="frmcliente.pas"/>
-        <Caret Line="160" Column="36" TopLine="149"/>
-      </Position>
-      <Position>
-        <Filename Value="frmcliente.pas"/>
-        <Caret Line="179" TopLine="160"/>
-      </Position>
       <Position>
         <Filename Value="frmcliente.pas"/>
         <Caret Line="226" TopLine="210"/>
@@ -245,6 +240,14 @@
       <Position>
         <Filename Value="uclientecontroller.pas"/>
         <Caret Line="44" Column="12" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="ucliente.pas"/>
+        <Caret Line="11" Column="38" TopLine="3"/>
+      </Position>
+      <Position>
+        <Filename Value="uclienteservice.pas"/>
+        <Caret Line="6" Column="29"/>
       </Position>
     </JumpHistory>
     <RunParams>
