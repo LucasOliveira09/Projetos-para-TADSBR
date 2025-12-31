@@ -8,7 +8,6 @@
       <Unit>
         <Filename Value="api.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <CursorPos X="33" Y="21"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
@@ -16,9 +15,10 @@
       <Unit>
         <Filename Value="uclientecontroller.pas"/>
         <UnitName Value="uClienteController"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="174"/>
-        <CursorPos X="5" Y="204"/>
+        <TopLine Value="86"/>
+        <CursorPos X="40" Y="105"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
@@ -36,7 +36,7 @@
         <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="19">
+    <JumpHistory HistoryIndex="20">
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="10" Column="15"/>
@@ -116,6 +116,10 @@
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="12" Column="16"/>
+      </Position>
+      <Position>
+        <Filename Value="api.lpr"/>
+        <Caret Line="21" Column="33"/>
       </Position>
     </JumpHistory>
     <RunParams>

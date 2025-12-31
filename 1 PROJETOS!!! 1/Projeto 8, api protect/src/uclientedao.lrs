@@ -1,0 +1,12 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TForm1','FORMDATA',[
+  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3#248#3#6'Height'#3#155#2#3'Top'#3#141#0#5
+  +'Width'#3'C'#3#7'Caption'#6#5'Form1'#10'LCLVersion'#6#7'4.4.0.0'#0#12'TZConn'
+  +'ection'#12'ZConnection1'#16'ControlsCodePage'#7#8'cCP_UTF8'#18'Properties.S'
+  +'trings'#1#6#23'RawStringEncoding=DB_CP'#0#17'DisableSavepoints'#8#4'Port'#2
+  +#0#8'Database'#6'kC:\Users\Luquinhas\Desktop\RepositoriosGitHub\Projetos-par'
+  +'a-TADSBR\1 PROJETOS!!! 1\Projeto 6, CRUD\CRUD.FDB'#4'User'#6#6'SYSDBA'#8'Pa'
+  +'ssword'#6#9'masterkey'#8'Protocol'#6#8'firebird'#4'Left'#2'U'#3'Top'#3#239#0
+  +#0#0#0
+]);

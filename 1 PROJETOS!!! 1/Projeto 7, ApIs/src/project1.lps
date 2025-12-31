@@ -20,8 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteController"/>
-        <TopLine Value="14"/>
-        <CursorPos X="41" Y="14"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="156"/>
+        <CursorPos X="31" Y="164"/>
         <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit>
@@ -92,12 +93,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <TopLine Value="4"/>
         <CursorPos X="47" Y="20"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="D:\Luquinha\Downloads\zeosdbo-8.0.0-stable\src\component\ZDatasetParam.pas"/>
@@ -151,10 +152,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="uclientedao.pas"/>
-        <Caret Line="123" Column="21" TopLine="104"/>
-      </Position>
       <Position>
         <Filename Value="uclientedao.pas"/>
         <Caret Line="21" Column="58" TopLine="5"/>
@@ -270,6 +267,10 @@
       <Position>
         <Filename Value="uclienteservice.pas"/>
         <Caret Line="116" Column="18" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="21" Column="36" TopLine="14"/>
       </Position>
     </JumpHistory>
     <RunParams>
