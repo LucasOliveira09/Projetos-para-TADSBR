@@ -21,8 +21,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteController"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="26"/>
-        <CursorPos X="12" Y="44"/>
+        <TopLine Value="23"/>
+        <CursorPos X="59" Y="29"/>
         <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
@@ -44,7 +44,6 @@
         <HasResources Value="True"/>
         <UnitName Value="uCliente"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="3"/>
         <CursorPos Y="35"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -63,8 +62,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="frmCliente"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="149"/>
-        <CursorPos X="63" Y="157"/>
+        <TopLine Value="243"/>
+        <CursorPos Y="283"/>
         <ComponentState Value="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -96,6 +95,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
         <EditorIndex Value="3"/>
+        <TopLine Value="88"/>
+        <CursorPos Y="120"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -121,7 +122,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteService"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="18"/>
+        <TopLine Value="53"/>
         <CursorPos X="5" Y="85"/>
         <UsageCount Value="12"/>
         <Loaded Value="True"/>
@@ -129,26 +130,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="frmcliente.pas"/>
-        <Caret Line="226" TopLine="210"/>
-      </Position>
-      <Position>
-        <Filename Value="uclienteservice.pas"/>
-        <Caret Line="44" Column="54" TopLine="34"/>
-      </Position>
-      <Position>
-        <Filename Value="frmcliente.pas"/>
-        <Caret Line="174" Column="16" TopLine="153"/>
-      </Position>
-      <Position>
-        <Filename Value="uclientedao.pas"/>
-        <Caret Line="69" Column="30" TopLine="52"/>
-      </Position>
-      <Position>
-        <Filename Value="frmcliente.pas"/>
-        <Caret Line="160" Column="15" TopLine="143"/>
-      </Position>
       <Position>
         <Filename Value="uclienteservice.pas"/>
         <Caret Line="62" Column="3" TopLine="32"/>
@@ -248,6 +229,26 @@
       <Position>
         <Filename Value="uclienteservice.pas"/>
         <Caret Line="6" Column="29"/>
+      </Position>
+      <Position>
+        <Filename Value="frmcliente.pas"/>
+        <Caret Line="79" Column="40" TopLine="61"/>
+      </Position>
+      <Position>
+        <Filename Value="uclienteservice.pas"/>
+        <Caret Line="7" Column="33"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="7" Column="31"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientedao.pas"/>
+        <Caret Line="93" Column="26" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="27" Column="16" TopLine="23"/>
       </Position>
     </JumpHistory>
     <RunParams>

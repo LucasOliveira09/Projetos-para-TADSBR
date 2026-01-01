@@ -46,8 +46,8 @@ begin
       LToken            := TJWT.Create;
       LToken.JOSE.alg   := 'HS256';
       LToken.JOSE.typ   := 'JWT';
-      LToken.Claims.iat := DateTimeToUnix(Now); //Timestamp de quando o token foi criado
-      LToken.Claims.exp := DateTimeToUnix(IncHour(Now, 24)); //Timestamp de quando o token irá expirar (24 horas)
+      LToken.Claims.iat := DateTimeToUnix(Now)
+      LToken.Claims.exp := DateTimeToUnix(IncHour(Now, 24));
       LToken.Claims.sub := nome;  //Entidade à quem o token pertence (nome do usuário)
       LToken.Claims.aud := id; //Destinatário do token (ID do usuário)
 

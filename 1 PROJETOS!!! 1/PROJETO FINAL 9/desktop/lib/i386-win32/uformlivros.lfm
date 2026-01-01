@@ -1,0 +1,48 @@
+object FrmLivros: TFrmLivros
+  Left = 1035
+  Height = 641
+  Top = 106
+  Width = 859
+  Caption = 'FrmLivros'
+  ClientHeight = 641
+  ClientWidth = 859
+  LCLVersion = '4.4.0.0'
+  object DBGrid1: TDBGrid
+    Left = 144
+    Height = 168
+    Top = 104
+    Width = 560
+    Color = clWindow
+    Columns = <>
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 368
+    Height = 49
+    Top = 32
+    Width = 130
+    Caption = 'LIVROS'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -40
+    Font.Name = 'Sharkartoon'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object btnVoltar: TButton
+    Left = 0
+    Height = 57
+    Top = 0
+    Width = 168
+    Caption = 'Voltar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -23
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+    OnClick = btnVoltarClick
+  end
+end

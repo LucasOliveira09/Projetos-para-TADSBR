@@ -21,7 +21,6 @@ implementation
 
 procedure ConfigurarHorseJWT();
 begin
-  //Configura as rotas que são públicas: Não precisam do token JWT para serem acessadas. As demais rotas estão todas autenticadas.
   SetLength(publicRoutes, 1);
   publicRoutes[0] := '/api/login';
 

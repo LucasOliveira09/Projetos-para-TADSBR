@@ -14,7 +14,7 @@ procedure Login(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 implementation
 
 uses
-  uDBConnection; //Permite conexão com o banco de dados
+  uModuloDados;
 
 procedure Registry(App : THorse);
 begin
@@ -96,7 +96,7 @@ begin
     Senha    := JSONBody.Strings['senha'];
 
     Query := TZQuery.Create(nil);
-    Query.Connection := GetConnection;
+    Query.Connection := DataModule2.ZConnection1;
     Query.SQL.Text := 'SELECT ID, NOME FROM USUARIOS WHERE EMAIL = :EMAIL AND SENHA = :SENHA AND ATIVO = TRUE';
     Query.ParamByName('EMAIL').AsString := Usuario;
     Query.ParamByName('SENHA').AsString := Senha;

@@ -8,7 +8,6 @@
       <Unit>
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <CursorPos X="43" Y="17"/>
         <UsageCount Value="44"/>
@@ -150,15 +149,17 @@
       <Unit>
         <Filename Value="config.pas"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="4"/>
-        <CursorPos X="35" Y="26"/>
+        <TopLine Value="8"/>
+        <CursorPos X="6" Y="23"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="controller.auth.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <CursorPos X="10" Y="17"/>
+        <TopLine Value="63"/>
+        <CursorPos X="37" Y="86"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
@@ -173,8 +174,8 @@
       <Unit>
         <Filename Value="api.lpr"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="5"/>
-        <CursorPos X="23" Y="15"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="39"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
