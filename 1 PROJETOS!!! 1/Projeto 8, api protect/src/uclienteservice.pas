@@ -1,4 +1,4 @@
-wunit uClienteService;
+unit uClienteService;
 
 {$mode objfpc}{$H+}
 

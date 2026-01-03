@@ -16,9 +16,8 @@ const
 var
   App : THorse;
 begin
-  DataModule2 := TDataModule2.Create(nil);
   try
-    DataModule2.ZConnection1.Connect;
+    GetConnection.Connect;
   except
     on E: Exception do
     begin

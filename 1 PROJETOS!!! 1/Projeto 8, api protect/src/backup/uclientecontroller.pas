@@ -26,6 +26,7 @@ begin
   App
     .Get('/api/clientes', GetClientes)
     .Get('/api/clientes/:id', GetCliente)
+    .Get('/api/clientes/busca/:nome', GetClienteNome)
     .Post('/api/clientes', PostCliente)
     .Put('/api/clientes/:id', PutCliente)
     .Delete('/api/clientes/:id', DeleteCliente);

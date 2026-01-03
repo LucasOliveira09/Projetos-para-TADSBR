@@ -10,7 +10,7 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="43" Y="17"/>
+        <CursorPos X="26" Y="29"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
@@ -21,8 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteController"/>
-        <TopLine Value="4"/>
-        <CursorPos X="3" Y="8"/>
+        <TopLine Value="168"/>
+        <CursorPos X="50" Y="185"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
@@ -34,7 +34,8 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uModuloDados"/>
         <EditorIndex Value="3"/>
-        <CursorPos Y="21"/>
+        <TopLine Value="16"/>
+        <CursorPos X="47" Y="31"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -120,8 +121,6 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteService"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="110"/>
-        <CursorPos X="4" Y="116"/>
         <UsageCount Value="13"/>
         <Loaded Value="True"/>
       </Unit>
@@ -150,17 +149,22 @@
       <Unit>
         <Filename Value="config.pas"/>
         <EditorIndex Value="8"/>
-        <TopLine Value="4"/>
-        <CursorPos X="35" Y="26"/>
+        <TopLine Value="8"/>
+        <CursorPos X="35" Y="25"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="controller.auth.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="6"/>
-        <CursorPos X="10" Y="17"/>
+        <TopLine Value="62"/>
+        <CursorPos X="38" Y="99"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\modules\horse-cors\src\Horse.CORS.pas"/>
@@ -173,33 +177,13 @@
       <Unit>
         <Filename Value="api.lpr"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="5"/>
-        <CursorPos X="23" Y="15"/>
+        <TopLine Value="12"/>
+        <CursorPos Y="39"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="uclientecontroller.pas"/>
-        <Caret Line="97" Column="3" TopLine="81"/>
-      </Position>
-      <Position>
-        <Filename Value="uclientecontroller.pas"/>
-        <Caret Line="91" Column="67" TopLine="75"/>
-      </Position>
-      <Position>
-        <Filename Value="uclientecontroller.pas"/>
-        <Caret Line="122" Column="25" TopLine="117"/>
-      </Position>
-      <Position>
-        <Filename Value="uclientecontroller.pas"/>
-        <Caret Line="204" Column="5" TopLine="173"/>
-      </Position>
-      <Position>
-        <Filename Value="uclientecontroller.pas"/>
-        <Caret Line="96" Column="17" TopLine="81"/>
-      </Position>
       <Position>
         <Filename Value="uclientecontroller.pas"/>
         <Caret Line="93" Column="29" TopLine="78"/>
@@ -299,6 +283,25 @@
       <Position>
         <Filename Value="config.pas"/>
         <Caret Line="26" Column="36" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="umodulodados.pas"/>
+        <Caret Line="5" Column="32"/>
+      </Position>
+      <Position>
+        <Filename Value="config.pas"/>
+        <Caret Line="25" Column="35" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="uclienteservice.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="controller.auth.pas"/>
+        <Caret Line="49" Column="48" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="controller.auth.pas"/>
+        <Caret Line="99" Column="38" TopLine="62"/>
       </Position>
     </JumpHistory>
     <RunParams>

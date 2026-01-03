@@ -29,19 +29,14 @@ begin
   end;
 
   App := THorse.Create;
-
-  //Personalização de configurações do CORS
   ConfigurarHorseCORS();
-  //Personalização de configurações do JWT
   ConfigurarHorseJWT();
 
-  //Configurando componentes
   App.Use(CORS);
-  App.Use(Compression); //Compactação
-  App.Use(Jhonson); //Middleware json
+  App.Use(Compression);
+  App.Use(Jhonson);
   App.Use(HorseJWT(JWT_KEY, configJWT));
 
-  //Controladores (Rotas)
   controller.auth.Registry(App);
   uClienteController.Registry(App);
 

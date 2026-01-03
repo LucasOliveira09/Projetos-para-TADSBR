@@ -26,10 +26,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="28"/>
-        <CursorPos Y="44"/>
+        <CursorPos X="26" Y="45"/>
         <UsageCount Value="16"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -37,14 +35,15 @@
       <Unit>
         <Filename Value="udbconnection.pas"/>
         <UnitName Value="uDBConnection"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="22"/>
-        <CursorPos X="23" Y="34"/>
+        <CursorPos X="5" Y="54"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="22">
+    <JumpHistory HistoryIndex="23">
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="10" Column="15"/>
@@ -136,6 +135,10 @@
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="23" Column="117"/>
+      </Position>
+      <Position>
+        <Filename Value="udbconnection.pas"/>
+        <Caret Line="29" Column="21" TopLine="23"/>
       </Position>
     </JumpHistory>
     <RunParams>

@@ -8,16 +8,17 @@
       <Unit>
         <Filename Value="api.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="72" Y="7"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="11"/>
+        <CursorPos X="18" Y="20"/>
         <UsageCount Value="35"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="uclientecontroller.pas"/>
         <UnitName Value="uClienteController"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="101"/>
-        <CursorPos Y="124"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="102" Y="8"/>
         <UsageCount Value="17"/>
         <Loaded Value="True"/>
       </Unit>
@@ -27,8 +28,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uClienteDAO"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="28"/>
         <CursorPos Y="44"/>
         <UsageCount Value="17"/>
@@ -37,22 +37,64 @@
       </Unit>
       <Unit>
         <Filename Value="controller.auth.pas"/>
-        <EditorIndex Value="1"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="83"/>
         <CursorPos Y="103"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\modules\horse-jwt\src\Horse.JWT.pas"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="200"/>
         <CursorPos Y="216"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="config.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="umodulodados.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uModuloDados"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="18"/>
+        <CursorPos X="23" Y="34"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclienteservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit>
+      <Unit>
+        <Filename Value="ucliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="-1"/>
+        <CursorPos X="-1" Y="-1"/>
+        <UsageCount Value="20"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="27">
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="10" Column="15"/>
@@ -164,6 +206,10 @@
       <Position>
         <Filename Value="..\modules\horse-jwt\src\Horse.JWT.pas"/>
         <Caret Line="216" TopLine="200"/>
+      </Position>
+      <Position>
+        <Filename Value="uclientecontroller.pas"/>
+        <Caret Line="8" Column="102"/>
       </Position>
     </JumpHistory>
     <RunParams>

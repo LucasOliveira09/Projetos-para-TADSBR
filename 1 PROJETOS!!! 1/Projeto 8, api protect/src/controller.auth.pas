@@ -46,7 +46,7 @@ begin
       LToken            := TJWT.Create;
       LToken.JOSE.alg   := 'HS256';
       LToken.JOSE.typ   := 'JWT';
-      LToken.Claims.iat := DateTimeToUnix(Now)
+      LToken.Claims.iat := DateTimeToUnix(Now);
       LToken.Claims.exp := DateTimeToUnix(IncHour(Now, 24));
       LToken.Claims.sub := nome;  //Entidade à quem o token pertence (nome do usuário)
       LToken.Claims.aud := id; //Destinatário do token (ID do usuário)
@@ -96,7 +96,7 @@ begin
     Senha    := JSONBody.Strings['senha'];
 
     Query := TZQuery.Create(nil);
-    Query.Connection := DataModule2.ZConnection1;
+    Query.Connection := GetConnection;
     Query.SQL.Text := 'SELECT ID, NOME FROM USUARIOS WHERE EMAIL = :EMAIL AND SENHA = :SENHA AND ATIVO = TRUE';
     Query.ParamByName('EMAIL').AsString := Usuario;
     Query.ParamByName('SENHA').AsString := Senha;
