@@ -8,6 +8,7 @@
       <Unit>
         <Filename Value="api.lpr"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <CursorPos X="117" Y="23"/>
         <UsageCount Value="33"/>
         <Loaded Value="True"/>
@@ -34,10 +35,9 @@
       </Unit>
       <Unit>
         <Filename Value="udbconnection.pas"/>
+        <HasResources Value="True"/>
         <UnitName Value="uDBConnection"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="22"/>
         <CursorPos X="5" Y="54"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
