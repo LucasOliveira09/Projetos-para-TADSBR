@@ -5,7 +5,9 @@ unit uClienteController;
 interface
 
 uses
-  Horse, SysUtils, fpjson, jsonparser, ZConnection, ZDataset, uClienteService, uCliente, uModuloDados;
+  Horse, SysUtils, fpjson, jsonparser, ZConnection, ZDataset, uClienteService, uCliente, uDBConnection;
+
+
 
 procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure GetCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
@@ -21,32 +23,18 @@ var
 
 procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
-  Query: TZQuery;
+  Service : TClienteService;
   JSONArray: TJSONArray;
-  JSONObject: TJSONObject;
 begin
+  Service := TClienteService.Create(GetConnection);
   try
-    Query := TZQuery.Create(nil);
-    JSONArray := TJSONArray.Create;
     try
-      Query.Connection := GConnection;
-      Query.SQL.Text := 'SELECT ID, NOME, EMAIL FROM CLIENTES';
-      Query.Open;
+      JSONArray := Service.CarregarClientes;
 
-      while not Query.Eof do
-      begin
-        JSONObject := TJSONObject.Create;
-        JSONObject.Add('id', Query.FieldByName('ID').AsInteger);
-        JSONObject.Add('nome', Query.FieldByName('NOME').AsString);
-        JSONObject.Add('email', Query.FieldByName('EMAIL').AsString);
-        JSONArray.Add(JSONObject);
-        Query.Next;
-      end;
-
-      Res.ContentType('application/json');
-      Res.Send(JSONArray.AsJSON);
+        Res.ContentType('application/json');
+        Res.Send(JSONArray.AsJSON);
     finally
-      Query.Free;
+      Service.Free;
       JSONArray.Free;
     end;
   except
@@ -62,7 +50,7 @@ var
   ID : string;
   Cliente : TCliente;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := Req.Params.Items['id'];
     JSONObject := TJSONObject.Create;
@@ -95,7 +83,7 @@ var
   JSONArray: TJSONArray;
   Nome : string;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     Nome := Req.Params.Items['nome'];
     try
@@ -119,7 +107,7 @@ var
   Nome, Email, telefone: String;
   Service : TClienteService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     JSONBody := GetJSON(Req.Body) as TJSONObject;
     try
@@ -151,7 +139,7 @@ var
   ID: Integer;
   Nome, Email, telefone: String;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := StrToIntDef(Req.Params['id'], 0);
     JSONBody := GetJSON(Req.Body) as TJSONObject;
@@ -183,7 +171,7 @@ var
   ID: Integer;
   Service: TClienteService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := StrToInt(Req.Params['id']);
     try

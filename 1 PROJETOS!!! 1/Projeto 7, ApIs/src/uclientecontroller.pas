@@ -5,7 +5,9 @@ unit uClienteController;
 interface
 
 uses
-  Horse, SysUtils, fpjson, jsonparser, ZConnection, ZDataset, uClienteService, uCliente, uModuloDados;
+  Horse, SysUtils, fpjson, jsonparser, ZConnection, uClienteService, uCliente, uDBConnection;
+
+
 
 procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure GetCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
@@ -16,15 +18,12 @@ procedure DeleteCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc
 
 implementation
 
-var
-  GConnection: TZConnection;
-
 procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   Service : TClienteService;
   JSONArray: TJSONArray;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     try
       JSONArray := Service.CarregarClientes;
@@ -48,7 +47,7 @@ var
   ID : string;
   Cliente : TCliente;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := Req.Params.Items['id'];
     JSONObject := TJSONObject.Create;
@@ -81,7 +80,7 @@ var
   JSONArray: TJSONArray;
   Nome : string;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     Nome := Req.Params.Items['nome'];
     try
@@ -105,7 +104,7 @@ var
   Nome, Email, telefone: String;
   Service : TClienteService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     JSONBody := GetJSON(Req.Body) as TJSONObject;
     try
@@ -137,7 +136,7 @@ var
   ID: Integer;
   Nome, Email, telefone: String;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := StrToIntDef(Req.Params['id'], 0);
     JSONBody := GetJSON(Req.Body) as TJSONObject;
@@ -169,7 +168,7 @@ var
   ID: Integer;
   Service: TClienteService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TClienteService.Create(GetConnection);
   try
     ID := StrToInt(Req.Params['id']);
     try

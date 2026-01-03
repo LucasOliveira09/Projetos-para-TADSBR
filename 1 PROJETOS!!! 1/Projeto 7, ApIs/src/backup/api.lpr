@@ -3,7 +3,7 @@ program api;
 {$mode delphi}{$H+}
 
 uses
-  SysUtils, Horse, zcomponent, uClienteController, uModuloDados;
+  SysUtils, Horse, zcomponent, uClienteController, uDBConnection;
 
 procedure Listen(_listen : THorse);
 begin
@@ -11,14 +11,13 @@ begin
 end;
 
 begin
-  DataModule2 := TDataModule2.Create(nil);
   try
-    DataModule2.ZConnection1.Connect;
+    GetConnection.Connect;
 
     THorse
       .Get('/api/clientes', GetClientes)
       .Get('/api/clientes/:id', GetCliente)
-      .Get('/api/clientes/:nome', GetClienteNome)
+      .Get('/api/clientes/busca/:nome', GetClienteNome)
       .Post('/api/clientes', PostCliente)
       .Put('/api/clientes/:id', PutCliente)
       .Delete('/api/clientes/:id', DeleteCliente);

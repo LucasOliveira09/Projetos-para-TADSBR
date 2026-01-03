@@ -28,7 +28,6 @@ begin
 
   Application.Initialize;
   Application.CreateForm(TDataModule2, DataModule2);
-  Application.CreateForm(TFormCliente, FormCliente);
 
   Application.Run;
 end.

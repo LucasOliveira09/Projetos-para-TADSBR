@@ -13,7 +13,7 @@ uses
   Forms,
   uCliente,
   uClienteController,
-  uClienteDAO, uModuloDados,
+  uClienteDAO, uDBConnection,
   uClienteService;
 
 {$R *.res}
@@ -27,7 +27,5 @@ begin
   {$POP}
 
   Application.Initialize;
-  Application.CreateForm(TDataModule2, DataModule2);
-
   Application.Run;
 end.

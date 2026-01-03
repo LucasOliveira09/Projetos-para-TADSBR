@@ -9,7 +9,7 @@
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="BibliotecaDesktop"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="20"/>
         <CursorPos X="59" Y="44"/>
         <UsageCount Value="25"/>
@@ -23,8 +23,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormLivros"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="5"/>
-        <CursorPos X="5" Y="21"/>
+        <TopLine Value="8"/>
+        <CursorPos X="7" Y="38"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -46,7 +46,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLivroDAO"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="3"/>
         <CursorPos X="28" Y="4"/>
         <UsageCount Value="25"/>
@@ -91,7 +91,7 @@
         <ComponentName Value="DataModule2"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uModuloDados"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="7"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
@@ -112,7 +112,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uUsuarioDAO"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="8"/>
         <CursorPos X="23" Y="27"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
@@ -134,7 +134,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uUsuarioService"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <TopLine Value="27"/>
         <CursorPos X="69" Y="45"/>
         <UsageCount Value="24"/>
@@ -158,7 +158,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormPrincipal"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="26"/>
         <CursorPos X="7" Y="53"/>
         <UsageCount Value="24"/>
@@ -171,7 +171,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormLogin"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="2"/>
         <TopLine Value="32"/>
         <CursorPos X="3" Y="38"/>
         <UsageCount Value="12"/>
@@ -189,27 +189,21 @@
       <Unit>
         <Filename Value="..\..\Projeto 6, CRUD\frmcliente.pas"/>
         <UnitName Value="frmCliente"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="251"/>
         <CursorPos X="5" Y="280"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="view\uformlivros.lfm"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="5"/>
-        <CursorPos X="28" Y="10"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="28" Y="42"/>
         <UsageCount Value="10"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="view\uformlogin.pas"/>
-        <Caret Line="68" Column="20" TopLine="42"/>
-      </Position>
       <Position>
         <Filename Value="view\uformlogin.pas"/>
         <Caret Line="65" Column="6" TopLine="42"/>
@@ -324,6 +318,10 @@
       <Position>
         <Filename Value="view\uformlivros.lfm"/>
         <Caret Line="10" Column="28" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="21" Column="5" TopLine="5"/>
       </Position>
     </JumpHistory>
     <RunParams>

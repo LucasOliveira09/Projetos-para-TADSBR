@@ -5,17 +5,27 @@ unit uLivroDAO;
 interface
 
 uses
-  SysUtils, ZDataset, uModuloDados, uLivro;
+  SysUtils, ZDataset, uModuloDados, uLivro, ZConnection;
 
 type
   TLivroDAO = class
+  private
+    FConnection: TZConnection;
   public
+    constructor Create(AConnection: TZConnection);
     function ListarTodos: TZQuery;
-    function Salvar(ALivro: TLivro): Boolean;
-
+    procedure Inserir(Livro: TLivro);
+    function ProcurarPorId(ID: Integer): TLivro;
+    procedure Deletar(ID: Integer);
+    procedure Atualizar(Livro: TLivro);
   end;
 
 implementation
+
+constructor TLivroDAO.Create(AConnection: TZConnection);
+begin
+  FConnection := AConnection;
+end;
 
 function TLivroDAO.ListarTodos: TZQuery;
 var
@@ -33,34 +43,90 @@ begin
   Result := Qry;
 end;
 
-function TLivroDAO.Salvar(ALivro: TLivro): Boolean;
+procedure TLivroDAO.Inserir(Livro: TLivro);
 var
-  Qry: TZQuery;
+Query: TZQuery;
 begin
-  Qry := TZQuery.Create(nil);
+ Query := TZQuery.Create(nil);
   try
-    Qry.Connection := DataModule2.ZConnection1;
-    if ALivro.ID = 0 then
-    begin
-      // Insert
-      Qry.SQL.Add('INSERT INTO LIVROS (TITULO, AUTOR_ID, ANO_PUBLICACAO, ISBN) VALUES (:T, :A, :ANO, :I)');
-    end
-    else
-    begin
-      // Update
-      Qry.SQL.Add('UPDATE LIVROS SET TITULO=:T, AUTOR_ID=:A, ANO_PUBLICACAO=:ANO, ISBN=:I WHERE ID=:ID');
-      Qry.ParamByName('ID').AsInteger := ALivro.ID;
-    end;
-
-    Qry.ParamByName('T').AsString := ALivro.Titulo;
-    Qry.ParamByName('A').AsInteger := ALivro.AutorID; // Aqui vai o ID, vindo do ComboBox
-    Qry.ParamByName('ANO').AsInteger := ALivro.Ano;
-    Qry.ParamByName('I').AsString := ALivro.ISBN;
-    Qry.ExecSQL;
-    Result := True;
+    Query.Connection := DataModule2.ZConnection1;
+    Query.SQL.Add('INSERT INTO LIVROS (TITULO, AUTOR_ID, ANO_PUBLICACAO, ISBN)');
+    Query.SQL.Add('VALUES (:TITULO, :AUTOR_ID, :ANO_PUBLICACAO, :ISBN)');
+    Query.ParamByName('TITULO').AsString := Livro.Titulo;
+    Query.ParamByName('AUTOR_ID').AsInteger := Livro.AutorID;
+    Query.ParamByName('ANO_PUBLICACAO').AsInteger := Livro.Ano;
+    Query.ParamByName('ISBN').AsString := Livro.ISBN;
+    Query.ExecSQL;
   finally
-    Qry.Free;
+    Query.Free;
   end;
 end;
-// ... Implementar Excluir ...
+
+procedure TLivroDAO.Atualizar(Livro: TLivro);
+var
+Query: TZQuery;
+begin
+ Query := TZQuery.Create(nil);
+  try
+    Query.Connection := DataModule2.ZConnection1;
+    Query.SQL.Add('UPDATE LIVROS SET TITULO = :TITULO, AUTOR_ID = :AUTOR_ID, ANO_PUBLICACAO = :ANO_PUBLICACAO, ISBN = :ISBN WHERE ID = :ID');
+    Query.ParamByName('TITULO').AsString := Livro.Titulo;
+    Query.ParamByName('AUTOR_ID').AsInteger := Livro.AutorID;
+    Query.ParamByName('ANO_PUBLICACAO').AsInteger := Livro.Ano;
+    Query.ParamByName('ISBN').AsString := Livro.ISBN;
+    Query.ParamByName('ID').AsInteger := Livro.ID;
+    Query.ExecSQL;
+  finally
+    Query.Free;
+  end;
+end;
+
+procedure TLivroDAO.Deletar(ID: Integer);
+ var
+Query: TZQuery;
+begin
+ Query := TZQuery.Create(nil);
+  try
+    Query.Connection := DataModule2.ZConnection1;
+    Query.SQL.Add('DELETE FROM LIVROS WHERE ID = :ID');
+    Query.ParamByName('ID').AsInteger := ID;
+    Query.ExecSQL;
+  finally
+    Query.Free;
+  end;
+end;
+
+function TLivroDAO.ProcurarPorId(ID: Integer): TLivro;
+var
+Query: TZQuery;
+CShow: TLivro;
+begin
+ CShow:= nil;
+ Query := TZQuery.Create(nil);
+  try
+    Query.Connection := DataModule2.ZConnection1;
+    Query.SQL.Add('SELECT * FROM LIVROS WHERE ID = :ID');
+    Query.ParamByName('ID').AsInteger := ID;
+    Query.Open;
+
+    if not Query.IsEmpty then
+    begin
+
+    CShow := TLivro.Create(
+    ID,
+    Query.ParamByName('AUTOR_ID').AsInteger,
+    Query.ParamByName('ANO').AsInteger,
+    Query.ParamByName('TITULO').AsString,
+    Query.ParamByName('ISBN').AsString
+      );
+
+
+    end;
+    Result := CShow;
+  finally
+    Query.Free;
+  end;
+end;
+
+
 end.

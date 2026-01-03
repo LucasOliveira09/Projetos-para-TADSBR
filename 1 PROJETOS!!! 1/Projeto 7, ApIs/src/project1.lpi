@@ -52,12 +52,10 @@
         <UnitName Value="uClienteController"/>
       </Unit>
       <Unit>
-        <Filename Value="umodulodados.pas"/>
+        <Filename Value="udbconnection.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="DataModule2"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="DataModule"/>
-        <UnitName Value="uModuloDados"/>
+        <UnitName Value="uDBConnection"/>
       </Unit>
     </Units>
   </ProjectOptions>
