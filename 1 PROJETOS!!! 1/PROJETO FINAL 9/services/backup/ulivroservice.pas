@@ -80,7 +80,7 @@ begin
   if not ValidarDados(Livro.Titulo, Livro.ISBN, Livro.AutorID) then
     raise Exception.Create('Dados inválidos para atualização.');
 
-  FDAO.AtualizarLivro(Livro);
+  FDAO.Atualizar(Livro);
 end;
 
 function TLivroService.BuscarPorID(Id: Integer): TLivro;

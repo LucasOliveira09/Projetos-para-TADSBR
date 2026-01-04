@@ -4,7 +4,7 @@ program api;
 
 uses
   SysUtils, Horse, Horse.CORS, Horse.Jhonson, Horse.Compression, Horse.JWT,
-  zcomponent, uLivrosController, uModuloDados;
+  zcomponent, controller.auth, config, uModuloDados;
 
 procedure Listen(_listen : THorse);
 begin

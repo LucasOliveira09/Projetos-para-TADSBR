@@ -110,7 +110,7 @@
         <UnitName Value="uLivroService"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="22" Y="8"/>
+        <CursorPos X="21" Y="8"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit>
@@ -133,7 +133,7 @@
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="3">
+    <JumpHistory HistoryIndex="2">
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="15" Column="10" TopLine="6"/>
@@ -145,10 +145,6 @@
       <Position>
         <Filename Value="api.lpr"/>
         <Caret Line="7" Column="33" TopLine="6"/>
-      </Position>
-      <Position>
-        <Filename Value="..\services\ulivroservice.pas"/>
-        <Caret Line="8" Column="21"/>
       </Position>
     </JumpHistory>
     <RunParams>

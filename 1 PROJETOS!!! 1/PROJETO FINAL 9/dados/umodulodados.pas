@@ -1,32 +1,55 @@
 unit uModuloDados;
 
-{$mode ObjFPC}{$H+}
+{$mode Delphi}
 
 interface
 
 uses
-  Classes, SysUtils, ZConnection, ZDataset, DB;
+  SysUtils, ZConnection;
 
-type
-
-  { TDataModule2 }
-
-  TDataModule2 = class(TDataModule)
-    DataSource1: TDataSource;
-    ZConnection1: TZConnection;
-    ZQuery1: TZQuery;
-  private
-
-  public
-
-  end;
-
-var
-  DataModule2: TDataModule2;
+procedure InitConnection;
+procedure FreeConnection;
+function GetConnection: TZConnection;
 
 implementation
 
-{$R *.lfm}
+var
+  GConnection: TZConnection;
+
+procedure InitConnection;
+begin
+  if Assigned(GConnection) then
+    Exit;
+
+  GConnection             := TZConnection.Create(nil);
+  GConnection.Protocol    := 'firebird';
+  GConnection.Database    := ExtractFilePath(ParamStr(0)) + 'biblioteca.fdb';
+  GConnection.User        := 'SYSDBA';
+  GConnection.Password    := 'masterkey';
+  GConnection.LoginPrompt := False;
+  GConnection.AutoCommit  := False;
+  GConnection.Connect;
+end;
+
+function GetConnection: TZConnection;
+begin
+  if not Assigned(GConnection) then
+    InitConnection;
+
+  Result := GConnection;
+end;
+
+procedure FreeConnection;
+begin
+  GConnection.Free;
+  GConnection := nil;
+end;
+
+initialization
+  InitConnection;
+
+finalization
+  FreeConnection;
 
 end.
 
