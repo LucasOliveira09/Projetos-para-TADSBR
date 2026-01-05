@@ -4,7 +4,8 @@ program api;
 
 uses
   SysUtils, Horse, Horse.CORS, Horse.Jhonson, Horse.Compression, Horse.JWT,
-  zcomponent, uLivrosController, uModuloDados;
+  zcomponent, uLivrosController, controller.auth, uModuloDados,
+  uEmprestimoService, config;
 
 procedure Listen(_listen : THorse);
 begin
@@ -37,7 +38,7 @@ begin
   App.Use(HorseJWT(JWT_KEY, configJWT));
 
   controller.auth.Registry(App);
-  uClienteController.Registry(App);
+  uLivrosController.Registry(App);
 
   THorse.Listen(9000, @Listen);
 end.

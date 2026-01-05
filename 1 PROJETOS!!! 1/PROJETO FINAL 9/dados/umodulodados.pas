@@ -23,7 +23,7 @@ begin
 
   GConnection             := TZConnection.Create(nil);
   GConnection.Protocol    := 'firebird';
-  GConnection.Database    := ExtractFilePath(ParamStr(0)) + 'biblioteca.fdb';
+  GConnection.Database    := ExtractFilePath(ParamStr(0)) + '../dados/biblioteca.fdb';
   GConnection.User        := 'SYSDBA';
   GConnection.Password    := 'masterkey';
   GConnection.LoginPrompt := False;

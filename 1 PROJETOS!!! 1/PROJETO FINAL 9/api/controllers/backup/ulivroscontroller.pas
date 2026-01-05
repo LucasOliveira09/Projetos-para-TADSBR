@@ -23,19 +23,19 @@ var
 procedure Registry(App : THorse);
 begin
   App
-    .Get('/api/livros', GetLivros)
-    .Get('/api/livros/:id', GetLivro)
-    .Post('/api/livros', PostLivro)
-    .Put('/api/livros/:id', PutLivro)
-    .Delete('/api/livros/:id', DeleteLivro);
+    .Get('/api/livro', GetLivros)
+    .Get('/api/livro/:id', GetLivro)
+    .Post('/api/livro', PostLivro)
+    .Put('/api/livro/:id', PutLivro)
+    .Delete('/api/livro/:id', DeleteLivro);
 end;
 
-procedure GetClientes(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
+procedure GetLivros(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
-  Service : TLivrosService;
+  Service : TLivroService;
   JSONArray: TJSONArray;
 begin
-  Service := TLivrosService.Create(DataModule2.ZConnection1);
+  Service := TLivroService.Create(GetConnection);
   try
     try
       JSONArray := Service.CarregarLivros;
@@ -52,14 +52,14 @@ begin
   end;
 end;
 
-procedure GetCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
+procedure GetLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
-  Service : TLivrosService;
+  Service : TLivroService;
   JSONObject: TJSONObject;
   ID : string;
   Livro : TLivro;
 begin
-  Service := TLivrosService.Create(DataModule2.ZConnection1);
+  Service := TLivroService.Create(GetConnection);
   try
     ID := Req.Params.Items['id'];
     JSONObject := TJSONObject.Create;
@@ -90,19 +90,21 @@ end;
 procedure PostLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   JSONBody: TJSONObject;
-  Nome, Email, telefone: String;
-  Service : TClienteService;
+  Titulo, ISBN: String;
+  AutorID, Ano : Integer;
+  Service : TLivroService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TLivroService.Create(GetConnection);
   try
     JSONBody := GetJSON(Req.Body) as TJSONObject;
     try
-      Nome     := JSONBody.Strings['nome'];
-      Email    := JSONBody.Strings['email'];
-      telefone := JSONBody.Strings['telefone'];
+      Titulo     := JSONBody.Strings['titulo'];
+      ISBN    := JSONBody.Strings['isbn'];
+      AutorID := JSONBody.Integers['autor_id'];
+      Ano := JSONBody.Integers['ano_publicacao'];
 
       try
-        Service.CriarCliente(Nome, Email, StrToInt(telefone));
+        Service.CriarLivro(Titulo, ISBN, AutorID, Ano);
       finally
         Service.Free;
       end;
@@ -120,20 +122,20 @@ end;
 procedure PutLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   JSONBody: TJSONObject;
-  Service: TLivrosService;
+  Service: TLivroService;
   Livro: TLivro;
   ID, AutorID, Ano: Integer;
   Titulo, ISBN: String;
 begin
-  Service := TLivrosService.Create(DataModule2.ZConnection1);
+  Service := TLivroService.Create(GetConnection);
   try
     ID := StrToIntDef(Req.Params['id'], 0);
     JSONBody := GetJSON(Req.Body) as TJSONObject;
 
     try
       Titulo  := JSONBody.Strings['nome'];
-      AutorID := JSONBody.Strings['autor_id'];
-      Ano := JSONBody.Strings['ano_publicacao'];
+      AutorID := JSONBody.Integers['autor_id'];
+      Ano := JSONBody.Integers['ano_publicacao'];
       ISBN := JSONBody.Strings['isbn'];
       try
         Livro := TLivro.Create(ID, Ano, AutorID, Titulo, ISBN);
@@ -153,12 +155,12 @@ begin
   end;
 end;
 
-procedure DeleteCliente(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
+procedure DeleteLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   ID: Integer;
-  Service: TClienteService;
+  Service: TLivroService;
 begin
-  Service := TClienteService.Create(DataModule2.ZConnection1);
+  Service := TLivroService.Create(GetConnection);
   try
     ID := StrToInt(Req.Params['id']);
     try

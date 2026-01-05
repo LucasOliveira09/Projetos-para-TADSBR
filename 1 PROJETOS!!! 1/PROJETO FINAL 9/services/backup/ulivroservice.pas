@@ -5,7 +5,7 @@ unit uLivroService;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection;
+  Classes, Interfaces, SysUtils, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection, fpjson, jsonparser;
 
 type
   TLivroService = class
@@ -20,7 +20,8 @@ type
     function BuscarPorID(Id: Integer): TLivro;
     function ValidarDados(Titulo, ISBN: String; AutorID: Integer): Boolean;
     procedure Deletar(Id: Integer);
-    function LimparTexto(const Texto: String): String;
+    function LimparTexto(Texto: String): String;
+    function CarregarLivros : TJSONArray;
 
   end;
 
@@ -37,7 +38,7 @@ begin
   inherited;
 end;
 
-function TLivroService.LimparTexto(const Texto: String): String;
+function TLivroService.LimparTexto(Texto: String): String;
 var
   i: Integer;
 begin
@@ -46,7 +47,7 @@ begin
   begin
     if Texto[i] in ['0'..'9'] then
       Result := Result + Texto[i];
-  end;
+  end
 end;
 
 function TLivroService.ValidarDados(Titulo, ISBN: String; AutorID: Integer): Boolean;
@@ -99,5 +100,33 @@ begin
     FDAO.Deletar(Id);
 end;
 
+function TLivroService.CarregarLivros : TJSONArray;
+var
+Lista : TListaLivros;
+JSONArray : TJSONArray;
+JSONObject : TJSONObject;
+Livro : TLivro;
+begin
+  Lista := FDAO.CarregarLivros;
+  try
+  JSONArray := TJSONArray.Create;
+
+  for Livro in Lista do
+  begin
+    JSONObject := TJSONObject.Create;
+        JSONObject.Add('id', Livro.ID);
+        JSONObject.Add('ano_publicacao', Livro.Ano);
+        JSONObject.Add('autor_id', Livro.AutorID);
+        JSONObject.Add('titulo', Livro.Titulo);
+        JSONObject.Add('isbn', Livro.ISBN);
+
+        JSONArray.Add(JSONObject);
+  end;
+
+      Result := JSONArray;
+  finally
+     Lista.Free;
+  end;
+end;
 end.
 

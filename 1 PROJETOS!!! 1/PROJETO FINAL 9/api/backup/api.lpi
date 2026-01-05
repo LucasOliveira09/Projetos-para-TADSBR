@@ -26,6 +26,9 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+      <Item>
         <PackageName Value="HashLib4PascalPackage"/>
       </Item>
       <Item>
@@ -40,7 +43,10 @@
       <Unit>
         <Filename Value="controllers\ulivroscontroller.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLivrosController"/>
       </Unit>
       <Unit>
         <Filename Value="..\dao\uautoresdao.pas"/>
@@ -51,11 +57,13 @@
         <Filename Value="..\dao\uemprestimosdao.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
+        <UnitName Value="uEmprestimosDAO"/>
       </Unit>
       <Unit>
         <Filename Value="..\dao\ulivrodao.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
+        <UnitName Value="uLivroDAO"/>
       </Unit>
       <Unit>
         <Filename Value="..\dao\uusuariodao.pas"/>
@@ -66,6 +74,7 @@
         <Filename Value="..\dados\umodulodados.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
+        <UnitName Value="uModuloDados"/>
       </Unit>
       <Unit>
         <Filename Value="..\entidades\uautor.pas"/>
@@ -76,22 +85,42 @@
         <Filename Value="..\entidades\uemprestimo.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
+        <UnitName Value="uEmprestimo"/>
       </Unit>
       <Unit>
         <Filename Value="..\entidades\ulivro.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uLivro"/>
       </Unit>
       <Unit>
         <Filename Value="..\services\ulivroservice.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLivroService"/>
       </Unit>
       <Unit>
         <Filename Value="..\services\uusuarioservice.pas"/>
         <IsPartOfProject Value="True"/>
         <HasResources Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="controllers\controller.auth.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="config\config.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\uemprestimoservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <HasResources Value="True"/>
+        <UnitName Value="uEmprestimoService"/>
       </Unit>
     </Units>
   </ProjectOptions>
@@ -103,7 +132,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="controllers;..\dao;..\dados;..\entidades;..\services;horses\modules\horse\src;horses\modules\horse-compression\src;horses\modules\horse-cors\src;horses\modules\horse-jwt\src;horses\modules\jhonson\src"/>
+      <OtherUnitFiles Value="controllers;..\dao;..\dados;..\entidades;..\services;horses\modules\horse\src;horses\modules\horse-compression\src;horses\modules\horse-cors\src;horses\modules\horse-jwt\src;horses\modules\jhonson\src;config"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Linking>
