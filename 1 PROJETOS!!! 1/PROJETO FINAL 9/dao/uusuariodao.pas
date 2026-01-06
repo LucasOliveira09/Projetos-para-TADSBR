@@ -20,7 +20,7 @@ var
   Qry: TZQuery;
 begin
   Qry := TZQuery.Create(nil);
-  Qry.Connection := DataModule2.ZConnection1;
+  Qry.Connection := GetConnection;
   Qry.SQL.Add('SELECT ID, USUARIO, SENHA, NOME FROM USUARIOS WHERE USUARIO = :EMAIL');
   Qry.ParamByName('EMAIL').AsString := AEmail;
   Qry.Open;

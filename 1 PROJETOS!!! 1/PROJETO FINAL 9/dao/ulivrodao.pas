@@ -21,6 +21,7 @@ type
     procedure Atualizar(Livro: TLivro);
     function CarregarLivros : TListaLivros;
     function VerificarAutor(AutorID : Integer) : Boolean;
+    procedure ListarLivrosParaDataset(aQuery: TZQuery);
   end;
 
 implementation
@@ -32,17 +33,20 @@ end;
 
 procedure TLivroDAO.Inserir(Livro: TLivro);
 var
-Query: TZQuery;
+  Query: TZQuery;
 begin
- Query := TZQuery.Create(nil);
+  Query := TZQuery.Create(nil);
   try
     Query.Connection := GetConnection;
+
     Query.SQL.Add('INSERT INTO LIVROS (TITULO, AUTOR_ID, ANO_PUBLICACAO, ISBN)');
     Query.SQL.Add('VALUES (:TITULO, :AUTOR_ID, :ANO_PUBLICACAO, :ISBN)');
+
     Query.ParamByName('TITULO').AsString := Livro.Titulo;
     Query.ParamByName('AUTOR_ID').AsInteger := Livro.AutorID;
     Query.ParamByName('ANO_PUBLICACAO').AsInteger := Livro.Ano;
     Query.ParamByName('ISBN').AsString := Livro.ISBN;
+
     Query.ExecSQL;
   finally
     Query.Free;
@@ -86,9 +90,8 @@ end;
 function TLivroDAO.ProcurarPorId(ID: Integer): TLivro;
 var
 Query: TZQuery;
-CShow: TLivro;
 begin
- CShow:= nil;
+ Result:= nil;
  Query := TZQuery.Create(nil);
   try
     Query.Connection := GetConnection;
@@ -99,17 +102,16 @@ begin
     if not Query.IsEmpty then
     begin
 
-    CShow := TLivro.Create(
+    Result :=  TLivro.Create(
     ID,
-    Query.ParamByName('AUTOR_ID').AsInteger,
-    Query.ParamByName('ANO').AsInteger,
-    Query.ParamByName('TITULO').AsString,
-    Query.ParamByName('ISBN').AsString
+    Query.FieldByName('ANO_PUBLICACAO').AsInteger,
+    Query.FieldByName('AUTOR_ID').AsInteger,
+    Query.FieldByName('TITULO').AsString,
+    Query.FieldByName('ISBN').AsString
       );
 
 
     end;
-    Result := CShow;
   finally
     Query.Free;
   end;
@@ -122,7 +124,7 @@ begin
  Query := TZQuery.Create(nil);
  try
 Query.Connection := GetConnection;
-    Query.SQL.Add('SELECT FROM AUTORES WHERE ID = :ID');
+    Query.SQL.Add('SELECT * FROM AUTORES WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := AutorID;
     Query.Open;
 
@@ -131,7 +133,8 @@ Query.Connection := GetConnection;
     Result := True;
     end
     else
-    Result := False
+    Result := False;
+
  finally
   Query.Free;
  end;
@@ -140,15 +143,18 @@ Query.Connection := GetConnection;
 end;
 
 function TLivroDAO.CarregarLivros : TListaLivros;
-  var
+var
   Query: TZQuery;
   Livro: TLivro;
-  begin
+begin
   Query := TZQuery.Create(nil);
   Result := TListaLivros.Create(True);
   try
-  Query.Connection := FConnection;
-    Query.SQL.Add('SELECT * FROM LIVROS');
+    Query.Connection := GetConnection;
+    Query.SQL.Add('SELECT L.*, A.NOME AS AUTOR_NOME');
+    Query.SQL.Add('FROM LIVROS L');
+    Query.SQL.Add('INNER JOIN AUTORES A ON A.ID = L.AUTOR_ID');
+
     Query.Open;
 
     while not Query.EOF do
@@ -161,15 +167,28 @@ function TLivroDAO.CarregarLivros : TListaLivros;
         Query.FieldByName('ISBN').AsString
       );
 
+      Livro.AutorNome := Query.FieldByName('AUTOR_NOME').AsString;
+
       Result.Add(Livro);
-
       Query.Next;
-      end;
-
-
+    end;
   finally
-       Query.Free;
+    Query.Free;
   end;
+end;
+
+procedure TLivroDAO.ListarLivrosParaDataset(AQuery: TZQuery);
+begin
+  AQuery.Connection := GetConnection;
+
+  AQuery.Close;
+  AQuery.SQL.Clear;
+
+  AQuery.SQL.Add('SELECT L.ID, L.TITULO, A.NOME AS AUTOR, L.ANO_PUBLICACAO, L.ISBN');
+  AQuery.SQL.Add('FROM LIVROS L');
+  AQuery.SQL.Add('LEFT JOIN AUTORES A ON A.ID = L.AUTOR_ID');
+
+  AQuery.Open;
 end;
 
 

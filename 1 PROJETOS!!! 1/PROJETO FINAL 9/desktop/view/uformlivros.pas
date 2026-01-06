@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, DBGrids, DB,
-  ZDataset, uLivro, uLivroDAO;
+  ZDataset, ZConnection, uLivro, uLivroDAO, uModuloDados;
 
 type
 
@@ -16,8 +16,17 @@ type
     btnVoltar: TButton;
     DBGrid1: TDBGrid;
     Label1: TLabel;
+    DataSource1: TDataSource;
+    ZConnection1: TZConnection;
+    ZQuery1: TZQuery;
     procedure btnVoltarClick(Sender: TObject);
+    procedure DataSource1DataChange(Sender: TObject; Field: TField);
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure ZConnection1AfterConnect(Sender: TObject);
   private
+    FQueryLivros : TZQuery;
+    DAO : TLivroDAO;
   public
   end;
 
@@ -28,9 +37,32 @@ implementation
 
 {$R *.lfm}
 
-{ TFrmLivros }
+procedure TFrmLivros.FormShow(Sender: TObject);
+var
+  DAO: TLivroDAO;
+begin
+  DAO := TLivroDAO.Create(GetConnection);
+  try
+    DAO.ListarLivrosParaDataset(ZQuery1);
+  finally
+    DAO.Free;
+  end;
+end;
+
+procedure TFrmLivros.DataSource1DataChange(Sender: TObject; Field: TField);
+begin
+
+end;
 
 
+
+
+
+procedure TFrmLivros.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  if Assigned(FQueryLivros) then FQueryLivros.Free;
+  if Assigned(DAO) then DAO.Free;
+end;
 
 procedure TFrmLivros.btnVoltarClick(Sender: TObject);
 begin

@@ -87,7 +87,7 @@ procedure PostLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 var
   JSONBody: TJSONObject;
   Titulo, ISBN: String;
-  AutorID, Ano : Integer;
+  AutorID, Ano : String;
   Service : TLivroService;
 begin
   Service := TLivroService.Create(GetConnection);
@@ -96,13 +96,12 @@ begin
     try
       Titulo     := JSONBody.Strings['titulo'];
       ISBN    := JSONBody.Strings['isbn'];
-      AutorID := JSONBody.Integers['autor_id'];
-      Ano := JSONBody.Integers['ano_publicacao'];
+      AutorID := JSONBody.Strings['autor_id'];
+      Ano := JSONBody.Strings['ano_publicacao'];
 
       try
-        Service.CriarLivro(Titulo, ISBN, AutorID, Ano);
+        Service.CriarLivro(Titulo, ISBN, StrToInt(AutorID), StrToInt(Ano));
       finally
-        Service.Free;
       end;
 
       Res.Status(201).Send('Cliente criado com sucesso');

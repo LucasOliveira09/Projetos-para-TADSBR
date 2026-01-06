@@ -1,10 +1,10 @@
 object FrmPrincipal: TFrmPrincipal
-  Left = 1191
-  Height = 656
-  Top = 120
+  Left = 1035
+  Height = 678
+  Top = 103
   Width = 846
   Caption = 'FrmPrincipal'
-  ClientHeight = 656
+  ClientHeight = 678
   ClientWidth = 846
   LCLVersion = '4.4.0.0'
   object inutil: TLabel

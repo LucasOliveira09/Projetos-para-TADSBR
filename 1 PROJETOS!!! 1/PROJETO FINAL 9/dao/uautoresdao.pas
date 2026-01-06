@@ -15,11 +15,9 @@ type
 
   end;
 
-var
 
 implementation
 
-{$R *.lfm}
 
 end.
 

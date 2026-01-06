@@ -34,7 +34,7 @@ begin
  Query := TZQuery.Create(nil);
  try
 Query.Connection := GetConnection;
-    Query.SQL.Add('SELECT FROM LIVROS WHERE ID = :ID');
+    Query.SQL.Add('SELECT * FROM LIVROS WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := LivroID;
     Query.Open;
 

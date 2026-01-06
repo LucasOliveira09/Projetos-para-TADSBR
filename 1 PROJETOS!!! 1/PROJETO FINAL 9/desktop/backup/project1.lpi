@@ -26,6 +26,12 @@
     </RunParams>
     <RequiredPackages>
       <Item>
+        <PackageName Value="zcomponentdesign"/>
+      </Item>
+      <Item>
+        <PackageName Value="FCL"/>
+      </Item>
+      <Item>
         <PackageName Value="zcomponent"/>
       </Item>
       <Item>
@@ -116,6 +122,58 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormPrincipal"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\entidades\uautor.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\entidades\uautor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uAutor"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\entidades\uemprestimo.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\entidades\uemprestimo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uEmprestimo"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\uemprestimoservice.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\uemprestimoservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uEmprestimoService"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\ulivroservice.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\ulivroservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uLivroService"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\dao\uautoresdao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uAutoresDAO"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\dao\uemprestimosdao.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uEmprestimosDAO"/>
       </Unit>
     </Units>
   </ProjectOptions>

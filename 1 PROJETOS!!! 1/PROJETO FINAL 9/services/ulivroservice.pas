@@ -68,11 +68,11 @@ begin
   if not ValidarDados(Titulo, ISBN, AutorID) then
     raise Exception.Create('Dados inválidos para inserção. Verifique nome, e-mail e telefone.');
 
-  Livro := TLivro.Create(0, AutorID, Ano, Titulo, ISBN);
+  Livro := TLivro.Create(0, Ano, AutorID, Titulo, ISBN);
   try
     FDAO.Inserir(Livro);
   finally
-    Livro.Free;
+     Livro.Free;
   end;
 end;
 
@@ -102,28 +102,28 @@ end;
 
 function TLivroService.CarregarLivros : TJSONArray;
 var
-Lista : TListaLivros;
-JSONArray : TJSONArray;
-JSONObject : TJSONObject;
-Livro : TLivro;
+  Lista : TListaLivros;
+  JSONArray : TJSONArray;
+  JSONObject : TJSONObject;
+  Livro : TLivro;
 begin
   Lista := FDAO.CarregarLivros;
   try
-  JSONArray := TJSONArray.Create;
+    JSONArray := TJSONArray.Create;
 
-  for Livro in Lista do
-  begin
-    JSONObject := TJSONObject.Create;
-        JSONObject.Add('id', Livro.ID);
-        JSONObject.Add('ano_publicacao', Livro.Ano);
-        JSONObject.Add('autor_id', Livro.AutorID);
-        JSONObject.Add('titulo', Livro.Titulo);
-        JSONObject.Add('isbn', Livro.ISBN);
+    for Livro in Lista do
+    begin
+      JSONObject := TJSONObject.Create;
+      JSONObject.Add('id', Livro.ID);
+      JSONObject.Add('titulo', Livro.Titulo);
+      JSONObject.Add('autor', Livro.AutorNome);
+      JSONObject.Add('ano_publicacao', Livro.Ano);
+      JSONObject.Add('isbn', Livro.ISBN);
 
-        JSONArray.Add(JSONObject);
-  end;
+      JSONArray.Add(JSONObject);
+    end;
 
-      Result := JSONArray;
+    Result := JSONArray;
   finally
      Lista.Free;
   end;

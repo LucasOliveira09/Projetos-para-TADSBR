@@ -5,7 +5,7 @@ program api;
 uses
   SysUtils, Horse, Horse.CORS, Horse.Jhonson, Horse.Compression, Horse.JWT,
   zcomponent, uLivrosController, controller.auth, uModuloDados,
-  uEmprestimoService, config;
+  uEmprestimoService, config, uEmprestimosController;
 
 procedure Listen(_listen : THorse);
 begin
@@ -39,6 +39,7 @@ begin
 
   controller.auth.Registry(App);
   uLivrosController.Registry(App);
+  uEmprestimosController.Registry(App);
 
   THorse.Listen(9000, @Listen);
 end.

@@ -122,6 +122,11 @@
         <HasResources Value="True"/>
         <UnitName Value="uEmprestimoService"/>
       </Unit>
+      <Unit>
+        <Filename Value="controllers\uemprestimoscontroller.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uEmprestimosController"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

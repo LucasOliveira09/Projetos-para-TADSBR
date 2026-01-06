@@ -9,11 +9,9 @@ uses
   {$IFDEF HASAMIGA}
   athreads,
   {$ENDIF}
-  Interfaces,
-  Forms, Controls, SysUtils, Dialogs,
-  uModuloDados,
-  uFormLogin, uUsuarioDAO, uUsuarioService,
-  uFormPrincipal;
+  Interfaces, Forms, Controls, SysUtils, Dialogs, uModuloDados, uFormLogin,
+  uUsuarioDAO, uAutoresDAO, uEmprestimosDAO, uUsuarioService,
+  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal;
 
 {$R *.res}
 
@@ -21,8 +19,24 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TDataModule2, DataModule2);
+  Application.CreateForm(GetConnection);
 
+  try
+    GetConnection.Connect;
+  except
+    on E: Exception do
+    begin
+      ShowMessage('Erro Crítico: Não foi possível conectar ao banco de dados.' + sLineBreak +
+                  'Detalhes: ' + E.Message);
+      Application.Terminate;
+      Exit;
+    end;
+  end;
+
+  FrmLogin := TFrmLogin.Create(nil);
+  try
+    if FrmLogin.ShowModal = mrOK then
+    begin
 
 
       Application.CreateForm(TFrmPrincipal, FrmPrincipal);
@@ -32,8 +46,13 @@ begin
 
 
       Application.Run;
+    end
+    else
     begin
       Application.Terminate;
     end;
+  finally
+    FrmLogin.Free;
+  end;
 
 end.

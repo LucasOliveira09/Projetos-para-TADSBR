@@ -1,7 +1,7 @@
 object FrmLogin: TFrmLogin
-  Left = 955
+  Left = 1201
   Height = 667
-  Top = 102
+  Top = 124
   Width = 842
   Caption = 'FrmLogin'
   ClientHeight = 667

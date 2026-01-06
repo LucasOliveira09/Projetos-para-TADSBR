@@ -27,7 +27,7 @@ begin
   GConnection.User        := 'SYSDBA';
   GConnection.Password    := 'masterkey';
   GConnection.LoginPrompt := False;
-  GConnection.AutoCommit  := False;
+  GConnection.AutoCommit  := True;
   GConnection.Connect;
 end;
 

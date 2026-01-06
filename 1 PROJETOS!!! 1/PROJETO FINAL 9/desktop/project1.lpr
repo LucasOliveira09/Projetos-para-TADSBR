@@ -9,11 +9,9 @@ uses
   {$IFDEF HASAMIGA}
   athreads,
   {$ENDIF}
-  Interfaces,
-  Forms, Controls, SysUtils, Dialogs,
-  uModuloDados,
-  uFormLogin, uUsuarioDAO, uUsuarioService,
-  uFormPrincipal;
+  Interfaces, Forms, Controls, SysUtils, Dialogs, uModuloDados, uFormLogin,
+  uUsuarioDAO, uAutoresDAO, uEmprestimosDAO, uUsuarioService,
+  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal;
 
 {$R *.res}
 
@@ -21,10 +19,9 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(TDataModule2, DataModule2);
 
   try
-    DataModule2.ZConnection1.Connect;
+    GetConnection.Connect;
   except
     on E: Exception do
     begin

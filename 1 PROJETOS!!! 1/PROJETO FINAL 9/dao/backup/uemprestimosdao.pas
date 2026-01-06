@@ -12,7 +12,7 @@ type
 
   TEmprestimosDAO = class
   private
-
+    FConnection: TZConnection;
   public
     function VerificarLivro(LivroID : Integer) : Boolean;
     procedure Inserir(Emprestimo : TEmprestimo);

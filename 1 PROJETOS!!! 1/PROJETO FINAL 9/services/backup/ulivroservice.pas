@@ -58,7 +58,7 @@ begin
   ISBNlimpo := LimparTexto(ISBN);
   Result := (Length(Trim(Titulo)) >= 3) and
             (Length(ISBNlimpo) = 13) and
-            (AutorID > 0);
+            (FDAO.VerificarAutor(AutorID));
 end;
 
 procedure TLivroService.CriarLivro(Titulo, ISBN: String; AutorID, Ano: Integer);
@@ -68,11 +68,11 @@ begin
   if not ValidarDados(Titulo, ISBN, AutorID) then
     raise Exception.Create('Dados inválidos para inserção. Verifique nome, e-mail e telefone.');
 
-  Livro := TLivro.Create(0, AutorID, Ano, Titulo, ISBN);
+  Livro := TLivro.Create(0, Ano, AutorID, Titulo, ISBN);
   try
     FDAO.Inserir(Livro);
   finally
-    Livro.Free;
+     Livro.Free;
   end;
 end;
 

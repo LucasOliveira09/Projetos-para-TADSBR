@@ -5,7 +5,7 @@ unit uLivrosController;
 interface
 
 uses
-  Horse, SysUtils, fpjson, jsonparser, ZConnection, ZDataset, uLivroService, uLivro, uModuloDados;
+  Horse, SysUtils, fpjson, jsonparser, ZConnection, uLivroService, uLivro, uModuloDados;
 
 procedure Registry(App : THorse);
 procedure GetLivros(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
@@ -15,10 +15,6 @@ procedure PutLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 procedure DeleteLivro(Req: THorseRequest; Res: THorseResponse; Next: TNextProc);
 
 implementation
-
-var
-  GConnection: TZConnection;
-
 
 procedure Registry(App : THorse);
 begin
@@ -100,13 +96,12 @@ begin
     try
       Titulo     := JSONBody.Strings['titulo'];
       ISBN    := JSONBody.Strings['isbn'];
-      AutorID := JSONBody.Integers['autor_id'];
-      Ano := JSONBody.Integers['ano_publicacao'];
+      AutorID := JSONBody.Strings['autor_id'];
+      Ano := JSONBody.Strings['ano_publicacao'];
 
       try
-        Service.CriarLivro(Titulo, ISBN, AutorID, Ano);
+        Service.CriarLivro(Titulo, ISBN, StrToInt(AutorID), StrToInt(Ano));
       finally
-        Service.Free;
       end;
 
       Res.Status(201).Send('Cliente criado com sucesso');
