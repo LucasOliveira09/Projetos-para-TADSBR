@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, Forms, Controls, SysUtils, Dialogs, uModuloDados, uFormLogin,
   uUsuarioDAO, uAutoresDAO, uEmprestimosDAO, uUsuarioService,
-  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal;
+  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal, uFormLivros;
 
 {$R *.res}
 
@@ -40,7 +40,6 @@ begin
 
       Application.CreateForm(TFrmPrincipal, FrmPrincipal);
 
-      // Application.CreateForm(TFrmLivros, FrmLivros);
       // Application.CreateForm(TFrmAutores, FrmAutores);
 
 

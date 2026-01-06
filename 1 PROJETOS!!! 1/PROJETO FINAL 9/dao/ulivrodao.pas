@@ -22,6 +22,7 @@ type
     function CarregarLivros : TListaLivros;
     function VerificarAutor(AutorID : Integer) : Boolean;
     procedure ListarLivrosParaDataset(aQuery: TZQuery);
+    procedure ListarLivrosPorTitulo(AQuery: TZQuery; Filtro: String);
   end;
 
 implementation
@@ -187,6 +188,31 @@ begin
   AQuery.SQL.Add('SELECT L.ID, L.TITULO, A.NOME AS AUTOR, L.ANO_PUBLICACAO, L.ISBN');
   AQuery.SQL.Add('FROM LIVROS L');
   AQuery.SQL.Add('LEFT JOIN AUTORES A ON A.ID = L.AUTOR_ID');
+
+  AQuery.Open;
+
+end;
+
+procedure TLivroDAO.ListarLivrosPorTitulo(AQuery: TZQuery; Filtro: String);
+begin
+  AQuery.Connection := GetConnection;
+
+  AQuery.Close;
+  AQuery.SQL.Clear;
+
+  AQuery.SQL.Add('SELECT L.ID, L.TITULO, A.NOME AS AUTOR, L.ANO_PUBLICACAO, L.ISBN');
+  AQuery.SQL.Add('FROM LIVROS L');
+  AQuery.SQL.Add('LEFT JOIN AUTORES A ON A.ID = L.AUTOR_ID');
+
+  if Trim(Filtro) <> '' then
+  begin
+    AQuery.SQL.Add('WHERE LOWER(L.TITULO) LIKE LOWER(:TITULO)');
+  end;
+
+  AQuery.SQL.Add('ORDER BY L.TITULO');
+
+  if Trim(Filtro) <> '' then
+    AQuery.ParamByName('TITULO').AsString := '%' + Filtro + '%';
 
   AQuery.Open;
 end;

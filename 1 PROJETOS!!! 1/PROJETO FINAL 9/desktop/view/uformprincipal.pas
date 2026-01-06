@@ -43,11 +43,10 @@ begin
     FrmLivros := TFrmLivros.Create(nil);
 
   try
-    // Exemplo: FrmLivros.UsuarioLogado := ...;
 
     FrmLivros.ShowModal;
   finally
-    // Garante que a memória é limpa, mesmo se der erro
+
     FreeAndNil(FrmLivros);
     Self.Show;
   end;

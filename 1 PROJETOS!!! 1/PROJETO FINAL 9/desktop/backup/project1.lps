@@ -9,10 +9,9 @@
         <Filename Value="project1.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="BibliotecaDesktop"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="6"/>
-        <CursorPos X="26" Y="21"/>
-        <UsageCount Value="27"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="30" Y="46"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -22,10 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormLivros"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="8"/>
-        <CursorPos X="73" Y="24"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="340"/>
+        <CursorPos X="15" Y="360"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -36,7 +34,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -46,10 +44,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLivroDAO"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="3"/>
-        <CursorPos X="31" Y="8"/>
-        <UsageCount Value="27"/>
+        <TopLine Value="177"/>
+        <CursorPos X="5" Y="194"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -59,7 +58,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -73,7 +72,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
       </Unit>
       <Unit>
         <Filename Value="..\dados\umodulodados.lfm"/>
@@ -82,7 +81,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -91,8 +90,10 @@
         <ComponentName Value="DataModule2"/>
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="uModuloDados"/>
-        <EditorIndex Value="7"/>
-        <UsageCount Value="27"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="23"/>
+        <CursorPos X="45" Y="45"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -102,7 +103,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -112,9 +113,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uUsuarioDAO"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="34" Y="23"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="37"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -124,7 +125,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="36"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -134,10 +135,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uUsuarioService"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="27"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="31"/>
         <CursorPos X="69" Y="45"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -148,7 +149,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="36"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -158,10 +159,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormPrincipal"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="26"/>
-        <CursorPos X="7" Y="53"/>
-        <UsageCount Value="26"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="27"/>
+        <CursorPos X="7" Y="45"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -172,7 +173,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -184,7 +185,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
       </Unit>
       <Unit>
         <Filename Value="..\entidades\uemprestimo.lfm"/>
@@ -193,7 +194,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -205,7 +206,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
       </Unit>
       <Unit>
         <Filename Value="..\services\uemprestimoservice.lfm"/>
@@ -214,7 +215,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -226,7 +227,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
       </Unit>
       <Unit>
         <Filename Value="..\services\ulivroservice.lfm"/>
@@ -235,7 +236,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -243,9 +244,10 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <UnitName Value="uLivroService"/>
-        <EditorIndex Value="2"/>
-        <CursorPos X="6"/>
-        <UsageCount Value="22"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="11"/>
+        <CursorPos X="62" Y="25"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -253,9 +255,9 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <UnitName Value="uAutoresDAO"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="10"/>
         <CursorPos X="15" Y="19"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -267,7 +269,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="32"/>
       </Unit>
       <Unit>
         <Filename Value="view\uformlogin.pas"/>
@@ -275,10 +277,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uFormLogin"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="32"/>
-        <CursorPos X="3" Y="38"/>
-        <UsageCount Value="13"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="7"/>
+        <CursorPos X="46" Y="50"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -287,7 +289,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="246"/>
         <CursorPos X="16" Y="259"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
       </Unit>
       <Unit>
@@ -296,138 +298,147 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="251"/>
         <CursorPos X="5" Y="280"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="view\uformlivros.lfm"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="11"/>
         <TopLine Value="10"/>
         <CursorPos X="28" Y="42"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-generics\src\generics.collections.pas"/>
+        <UnitName Value="Generics.Collections"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="1170"/>
+        <CursorPos X="20" Y="1186"/>
+        <UsageCount Value="15"/>
+        <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="279" Column="5" TopLine="247"/>
-      </Position>
-      <Position>
-        <Filename Value="view\uformlivros.lfm"/>
-        <Caret Line="10" Column="28" TopLine="5"/>
+        <Caret Line="252" Column="18" TopLine="236"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="21" Column="5" TopLine="5"/>
+        <Caret Line="25" Column="69" TopLine="14"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="22" Column="39"/>
+        <Caret Line="295" Column="69" TopLine="283"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="9" Column="44"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\uusuariodao.pas"/>
-        <Caret Line="23" Column="34"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\uautoresdao.pas"/>
-        <Caret Line="21"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\uautoresdao.pas"/>
-        <Caret Line="19" Column="15"/>
-      </Position>
-      <Position>
-        <Filename Value="project1.lpr"/>
-        <Caret Line="25" Column="18" TopLine="6"/>
+        <Caret Line="121" Column="34" TopLine="109"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="9" Column="44"/>
+        <Caret Line="120" Column="33" TopLine="104"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="22" Column="9"/>
+        <Caret Line="121" Column="3" TopLine="105"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="23" Column="9"/>
+        <Caret Line="122" Column="3" TopLine="106"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="24" Column="9"/>
+        <Caret Line="124" Column="3" TopLine="108"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="23" Column="9"/>
+        <Caret Line="165" Column="3" TopLine="166"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="22" Column="9"/>
+        <Caret Line="122" Column="3" TopLine="107"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="33" Column="18" TopLine="7"/>
+        <Caret Line="231" Column="16" TopLine="297"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="21" Column="41" TopLine="11"/>
+        <Caret Line="325" Column="3" TopLine="297"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="20" Column="5" TopLine="21"/>
+        <Caret Line="245" Column="15" TopLine="237"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="47" Column="12" TopLine="19"/>
+        <Caret Line="301" Column="18" TopLine="276"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="36" Column="4" TopLine="13"/>
+        <Caret Line="300" Column="10" TopLine="276"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="40" TopLine="12"/>
+        <Caret Line="292" Column="3" TopLine="276"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="49" Column="3" TopLine="35"/>
+        <Caret Line="69" Column="46" TopLine="54"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="48" Column="3" TopLine="34"/>
+        <Caret Line="291" Column="32" TopLine="276"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="49" Column="3" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\ulivrodao.pas"/>
-        <Caret Line="184" Column="29" TopLine="164"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\ulivrodao.pas"/>
-        <Caret Line="182" TopLine="160"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\ulivrodao.pas"/>
-        <Caret Line="24" Column="52" TopLine="8"/>
+        <Caret Line="91" Column="5" TopLine="101"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="40" Column="31" TopLine="20"/>
-      </Position>
-      <Position>
-        <Filename Value="..\dao\ulivrodao.pas"/>
-        <Caret Line="182" Column="37" TopLine="163"/>
+        <Caret Line="286" Column="27" TopLine="279"/>
       </Position>
       <Position>
         <Filename Value="view\uformlivros.pas"/>
-        <Caret Line="37" Column="11" TopLine="29"/>
+        <Caret Line="302" Column="42" TopLine="283"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="323" Column="27" TopLine="309"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="293" Column="20" TopLine="282"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="296" Column="14" TopLine="283"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="229" Column="17" TopLine="208"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="261" Column="15" TopLine="247"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="308" Column="6" TopLine="296"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="307" Column="25" TopLine="296"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="361" Column="6" TopLine="338"/>
+      </Position>
+      <Position>
+        <Filename Value="view\uformlivros.pas"/>
+        <Caret Line="360" Column="15" TopLine="340"/>
       </Position>
     </JumpHistory>
     <RunParams>

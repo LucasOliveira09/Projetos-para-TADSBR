@@ -5,7 +5,7 @@ unit uLivroService;
 interface
 
 uses
-  Classes, Interfaces, SysUtils, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection, fpjson, jsonparser;
+  Classes, Interfaces, SysUtils, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection, fpjson, jsonparser, ZDataset;
 
 type
   TLivroService = class
@@ -22,6 +22,7 @@ type
     procedure Deletar(Id: Integer);
     function LimparTexto(Texto: String): String;
     function CarregarLivros : TJSONArray;
+    procedure FiltrarLivros(AQuery: TZQuery; Filtro: String);
 
   end;
 
@@ -90,6 +91,13 @@ begin
     raise Exception.Create('ID inválido para busca!');
 
     Result := FDAO.ProcurarPorId(Id);
+end;
+
+procedure TLivroService.FiltrarLivros(AQuery: TZQuery; Filtro: String);
+begin
+  Filtro := Trim(Filtro);
+
+  FDAO.ListarLivrosPorTitulo(AQuery, Filtro);
 end;
 
 procedure TLivroService.Deletar(Id: Integer);

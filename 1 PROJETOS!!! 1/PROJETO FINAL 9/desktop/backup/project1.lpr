@@ -11,7 +11,7 @@ uses
   {$ENDIF}
   Interfaces, Forms, Controls, SysUtils, Dialogs, uModuloDados, uFormLogin,
   uUsuarioDAO, uAutoresDAO, uEmprestimosDAO, uUsuarioService,
-  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal;
+  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal, uFormLivros;
 
 {$R *.res}
 
@@ -19,7 +19,6 @@ begin
   RequireDerivedFormResource:=True;
   Application.Scaled:=True;
   Application.Initialize;
-  Application.CreateForm(GetConnection);
 
   try
     GetConnection.Connect;
@@ -41,7 +40,7 @@ begin
 
       Application.CreateForm(TFrmPrincipal, FrmPrincipal);
 
-      // Application.CreateForm(TFrmLivros, FrmLivros);
+      Application.CreateForm(TFrmLivros, FrmLivros);
       // Application.CreateForm(TFrmAutores, FrmAutores);
 
 

@@ -22,6 +22,7 @@ type
     procedure Deletar(Id: Integer);
     function LimparTexto(Texto: String): String;
     function CarregarLivros : TJSONArray;
+    procedure FiltrarLivros(AQuery: TZQuery; Filtro: String);
 
   end;
 
@@ -92,6 +93,13 @@ begin
     Result := FDAO.ProcurarPorId(Id);
 end;
 
+procedure TLivroService.FiltrarLivros(AQuery: TZQuery; Filtro: String);
+begin
+  Filtro := Trim(Filtro);
+
+  FDAO.ListarLivrosPorTitulo(AQuery, Filtro);
+end;
+
 procedure TLivroService.Deletar(Id: Integer);
 begin
   if Id <= 0 then
@@ -102,28 +110,28 @@ end;
 
 function TLivroService.CarregarLivros : TJSONArray;
 var
-Lista : TListaLivros;
-JSONArray : TJSONArray;
-JSONObject : TJSONObject;
-Livro : TLivro;
+  Lista : TListaLivros;
+  JSONArray : TJSONArray;
+  JSONObject : TJSONObject;
+  Livro : TLivro;
 begin
   Lista := FDAO.CarregarLivros;
   try
-  JSONArray := TJSONArray.Create;
+    JSONArray := TJSONArray.Create;
 
-  for Livro in Lista do
-  begin
-    JSONObject := TJSONObject.Create;
-        JSONObject.Add('id', Livro.ID);
-        JSONObject.Add('ano_publicacao', Livro.Ano);
-        JSONObject.Add('autor_id', Livro.AutorID);
-        JSONObject.Add('titulo', Livro.Titulo);
-        JSONObject.Add('isbn', Livro.ISBN);
+    for Livro in Lista do
+    begin
+      JSONObject := TJSONObject.Create;
+      JSONObject.Add('id', Livro.ID);
+      JSONObject.Add('titulo', Livro.Titulo);
+      JSONObject.Add('autor', Livro.AutorNome);
+      JSONObject.Add('ano_publicacao', Livro.Ano);
+      JSONObject.Add('isbn', Livro.ISBN);
 
-        JSONArray.Add(JSONObject);
-  end;
+      JSONArray.Add(JSONObject);
+    end;
 
-      Result := JSONArray;
+    Result := JSONArray;
   finally
      Lista.Free;
   end;
