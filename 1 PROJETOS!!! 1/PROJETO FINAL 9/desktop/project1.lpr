@@ -11,7 +11,8 @@ uses
   {$ENDIF}
   Interfaces, Forms, Controls, SysUtils, Dialogs, uModuloDados, uFormLogin,
   uUsuarioDAO, uAutoresDAO, uEmprestimosDAO, uUsuarioService,
-  uEmprestimoService, uLivroService, uAutor, uEmprestimo, uFormPrincipal, uFormLivros;
+  uEmprestimoService, uLivroService, uAutorService, uAutor, uEmprestimo,
+  uFormPrincipal, uFormLivros, uFormAutor, uFormEmprestimo;
 
 {$R *.res}
 

@@ -38,6 +38,7 @@ object FrmPrincipal: TFrmPrincipal
     Width = 227
     Caption = 'btnAutores'
     TabOrder = 1
+    OnClick = btnAutoresClick
   end
   object btnEmprestimos: TButton
     Left = 552
@@ -46,5 +47,6 @@ object FrmPrincipal: TFrmPrincipal
     Width = 232
     Caption = 'btnEmprestimos'
     TabOrder = 2
+    OnClick = btnEmprestimosClick
   end
 end

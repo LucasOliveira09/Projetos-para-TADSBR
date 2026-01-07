@@ -1,0 +1,54 @@
+object FrmEmprestimo: TFrmEmprestimo
+  Left = 1034
+  Height = 675
+  Top = 96
+  Width = 864
+  Caption = 'FrmEmprestimo'
+  ClientHeight = 675
+  ClientWidth = 864
+  LCLVersion = '4.4.0.0'
+  OnShow = FormShow
+  object DBGrid: TDBGrid
+    Left = 120
+    Height = 208
+    Top = 104
+    Width = 640
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource
+    TabOrder = 0
+  end
+  object Label3: TLabel
+    Left = 296
+    Height = 58
+    Top = 24
+    Width = 265
+    Caption = 'EMPRESTIMO'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clNavy
+    Font.Height = -47
+    Font.Name = 'Sharkartoon'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object btn: TButton
+    Left = 0
+    Height = 57
+    Top = 0
+    Width = 168
+    Caption = 'Voltar'
+    TabOrder = 1
+  end
+  object DataSource: TDataSource
+    DataSet = Query
+    OnDataChange = DataSourceDataChange
+    Left = 648
+    Top = 40
+  end
+  object Query: TZQuery
+    Params = <>
+    Left = 592
+    Top = 40
+  end
+end

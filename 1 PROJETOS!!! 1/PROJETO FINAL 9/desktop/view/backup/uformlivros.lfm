@@ -1,10 +1,10 @@
 object FrmLivros: TFrmLivros
-  Left = 1035
-  Height = 904
-  Top = 106
+  Left = 496
+  Height = 751
+  Top = 139
   Width = 859
   Caption = 'FrmLivros'
-  ClientHeight = 904
+  ClientHeight = 751
   ClientWidth = 859
   LCLVersion = '4.4.0.0'
   OnShow = FormShow

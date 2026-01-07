@@ -17,6 +17,8 @@ type
     btnAutores: TButton;
     btnEmprestimos: TButton;
     inutil: TLabel;
+    procedure btnAutoresClick(Sender: TObject);
+    procedure btnEmprestimosClick(Sender: TObject);
     procedure btnLivrosClick(Sender: TObject);
   private
 
@@ -30,7 +32,7 @@ var
 implementation
 
 uses
-  uFormLivros;
+  uFormLivros, uFormAutor, uFormEmprestimo;
 
 {$R *.lfm}
 
@@ -48,6 +50,38 @@ begin
   finally
 
     FreeAndNil(FrmLivros);
+    Self.Show;
+  end;
+end;
+
+procedure TFrmPrincipal.btnAutoresClick(Sender: TObject);
+begin
+ Self.Hide;
+ if not Assigned(FrmAutor) then
+    FrmAutor := TFrmAutor.Create(nil);
+
+  try
+
+    FrmAutor.ShowModal;
+  finally
+
+    FreeAndNil(FrmAutor);
+    Self.Show;
+  end;
+end;
+
+procedure TFrmPrincipal.btnEmprestimosClick(Sender: TObject);
+begin
+  Self.Hide;
+ if not Assigned(FrmEmprestimo) then
+    FrmEmprestimo := TFrmEmprestimo.Create(nil);
+
+  try
+
+    FrmEmprestimo.ShowModal;
+  finally
+
+    FreeAndNil(FrmEmprestimo);
     Self.Show;
   end;
 end;

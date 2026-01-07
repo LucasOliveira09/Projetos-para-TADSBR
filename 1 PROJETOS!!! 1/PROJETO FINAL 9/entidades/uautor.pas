@@ -19,11 +19,11 @@ type
 
 implementation
 
-  constructor TAutor.Create(ID: Integer; Nome, Nacionalidade: String);
-  begin
-    FID := ID;
-    FNome := Nome;
-    FNacionalidade := Nacionalidade;
-  end;
+constructor TAutor.Create(ID: Integer; Nome, Nacionalidade: String);
+begin
+  FID := ID;
+  FNome := Nome;
+  FNacionalidade := Nacionalidade;
+end;
 
 end.

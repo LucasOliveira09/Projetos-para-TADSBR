@@ -18,6 +18,7 @@ type
     procedure Inserir(Emprestimo : TEmprestimo);
     function CarregarEmprestimos: TListaEmprestimos;
     constructor Create(AConnection: TZConnection);
+    procedure ListarEmprestimosParaDataset(AQuery: TZQuery);
   end;
 
 implementation
@@ -27,6 +28,21 @@ begin
   FConnection := AConnection;
 end;
 
+procedure TEmprestimoDAO.ListarEmprestimosParaDataset(AQuery: TZQuery);
+begin
+  AQuery.Connection := FConnection;
+  AQuery.Close;
+  AQuery.SQL.Clear;
+
+  AQuery.SQL.Add('SELECT E.ID, U.NOME AS USUARIO, L.TITULO AS LIVRO, E.DATA_EMPRESTIMO, E.DATA_DEVOLUCAO');
+  AQuery.SQL.Add('FROM EMPRESTIMOS E');
+  AQuery.SQL.Add('INNER JOIN USUARIOS U ON U.ID = E.USUARIO_ID');
+  AQuery.SQL.Add('INNER JOIN LIVROS L ON L.ID = E.LIVRO_ID');
+  AQuery.SQL.Add('ORDER BY E.DATA_EMPRESTIMO DESC');
+
+  AQuery.Open;
+end;
+
 function TEmprestimosDAO.VerificarLivro(LivroID : Integer) : Boolean;
 var
 Query: TZQuery;
@@ -34,7 +50,7 @@ begin
  Query := TZQuery.Create(nil);
  try
 Query.Connection := GetConnection;
-    Query.SQL.Add('SELECT FROM LIVROS WHERE ID = :ID');
+    Query.SQL.Add('SELECT * FROM LIVROS WHERE ID = :ID');
     Query.ParamByName('ID').AsInteger := LivroID;
     Query.Open;
 

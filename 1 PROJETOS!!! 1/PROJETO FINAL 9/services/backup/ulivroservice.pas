@@ -5,7 +5,7 @@ unit uLivroService;
 interface
 
 uses
-  Classes, Interfaces, SysUtils, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection, fpjson, jsonparser;
+  Classes, Interfaces, SysUtils, Controls, Graphics, Dialogs, uLivroDAO, uLivro, ZConnection, fpjson, jsonparser, ZDataset;
 
 type
   TLivroService = class

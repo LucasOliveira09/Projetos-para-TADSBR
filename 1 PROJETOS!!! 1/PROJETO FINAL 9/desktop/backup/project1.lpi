@@ -161,6 +161,8 @@
         <Filename Value="..\services\ulivroservice.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="uLivroService"/>
       </Unit>
       <Unit>
@@ -174,6 +176,32 @@
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
         <UnitName Value="uEmprestimosDAO"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\uformautor.lfm"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\uformautor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmAutor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFormAutor"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\services\uautorservice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <UnitName Value="uAutorService"/>
+      </Unit>
+      <Unit>
+        <Filename Value="view\uformemprestimo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmEmprestimo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uFormEmprestimo"/>
       </Unit>
     </Units>
   </ProjectOptions>
