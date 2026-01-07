@@ -221,15 +221,11 @@ end;
 
 procedure TFrmAutor.btnVoltarClick(Sender: TObject);
 begin
-  if DBGrid1.Visible and not Criar.Visible and not Atualizar.Visible then
-  begin
-    Close;
-  end
-  else
-  begin
+    Self.Close;
+
     EsconderTudo;
     if Assigned(DAO) then DAO.ListarAutoresParaDataset(ZQuery1);
-  end;
+
 end;
 
 

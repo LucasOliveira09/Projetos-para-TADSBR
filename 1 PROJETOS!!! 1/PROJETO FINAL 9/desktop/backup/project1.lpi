@@ -141,6 +141,7 @@
         <Filename Value="..\entidades\uemprestimo.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
         <UnitName Value="uEmprestimo"/>
       </Unit>
       <Unit>
@@ -175,6 +176,7 @@
         <Filename Value="..\dao\uemprestimosdao.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
         <UnitName Value="uEmprestimosDAO"/>
       </Unit>
       <Unit>

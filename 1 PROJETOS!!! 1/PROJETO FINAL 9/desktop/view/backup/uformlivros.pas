@@ -176,10 +176,6 @@ begin
   if Assigned(DAO) then DAO.Free;
 end;
 
-// ==========================================================
-// 3. EVENTOS DO MENU (BTN...) - AQUI A MÁGICA DE EXIBIÇÃO
-// ==========================================================
-
 procedure TFrmLivros.CriarClick(Sender: TObject);
 begin
   EsconderTudo;
@@ -192,6 +188,7 @@ begin
   EditCriar4.Visible := True;
   CriarLabel1.Visible := True;
   CriarLabel2.Visible := True;
+  CriarLabel3.Visible := True;
   BtnCriar.Visible := True;
 
   EditCriar.Clear;
@@ -235,7 +232,11 @@ end;
 
 procedure TFrmLivros.DeletarClick(Sender: TObject);
 begin
-  if ZQuery1.IsEmpty then Exit;
+  if ZQuery1.IsEmpty then
+  begin
+    ShowMessage('Selecione um livro na tabela primeiro!');
+    Exit;
+  end;
 
   EsconderTudo;
 
@@ -259,17 +260,12 @@ end;
 
 procedure TFrmLivros.btnVoltarClick(Sender: TObject);
 begin
-  if DBGrid1.Visible and not Criar.Visible and not Atualizar.Visible then
-  begin
-    Close;
-  end
-  else
-  begin
+    Self.Close;
 
     EsconderTudo;
 
     if Assigned(DAO) then DAO.ListarLivrosParaDataset(ZQuery1);
-  end;
+
 end;
 
 

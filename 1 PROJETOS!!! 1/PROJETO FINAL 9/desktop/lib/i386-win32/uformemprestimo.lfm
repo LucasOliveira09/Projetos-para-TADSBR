@@ -1,17 +1,17 @@
 object FrmEmprestimo: TFrmEmprestimo
-  Left = 1034
+  Left = 483
   Height = 675
-  Top = 96
+  Top = 195
   Width = 864
   Caption = 'FrmEmprestimo'
-  ClientHeight = 675
-  ClientWidth = 864
+  ClientHeight = 0
+  ClientWidth = 0
   LCLVersion = '4.4.0.0'
   OnShow = FormShow
   object DBGrid: TDBGrid
-    Left = 120
+    Left = 104
     Height = 208
-    Top = 104
+    Top = 160
     Width = 640
     Color = clWindow
     Columns = <>
@@ -19,9 +19,9 @@ object FrmEmprestimo: TFrmEmprestimo
     TabOrder = 0
   end
   object Label3: TLabel
-    Left = 296
+    Left = 280
     Height = 58
-    Top = 24
+    Top = 80
     Width = 265
     Caption = 'EMPRESTIMO'
     Font.CharSet = ANSI_CHARSET
@@ -32,23 +32,56 @@ object FrmEmprestimo: TFrmEmprestimo
     Font.Quality = fqDraft
     ParentFont = False
   end
-  object btn: TButton
+  object Button1: TButton
+    Left = 281
+    Height = 57
+    Top = 504
+    Width = 264
+    Caption = 'Procurar'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 264
+    Height = 36
+    Top = 456
+    Width = 301
+    Font.Height = -20
+    ParentFont = False
+    TabOrder = 2
+    OnChange = Edit1Change
+  end
+  object Label1: TLabel
+    Left = 400
+    Height = 35
+    Top = 408
+    Width = 24
+    Caption = 'ID:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -27
+    Font.Name = 'Staubach'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+  end
+  object Button2: TButton
     Left = 0
     Height = 57
     Top = 0
-    Width = 168
+    Width = 179
     Caption = 'Voltar'
-    TabOrder = 1
+    TabOrder = 3
+    OnClick = Button2Click
   end
   object DataSource: TDataSource
     DataSet = Query
     OnDataChange = DataSourceDataChange
-    Left = 648
-    Top = 40
+    Left = 632
+    Top = 96
   end
   object Query: TZQuery
     Params = <>
-    Left = 592
-    Top = 40
+    Left = 576
+    Top = 96
   end
 end

@@ -1,17 +1,17 @@
 object FrmLivros: TFrmLivros
-  Left = 1035
-  Height = 904
-  Top = 106
+  Left = 540
+  Height = 839
+  Top = 97
   Width = 859
   Caption = 'FrmLivros'
-  ClientHeight = 904
+  ClientHeight = 839
   ClientWidth = 859
   LCLVersion = '4.4.0.0'
   OnShow = FormShow
   object DBGrid1: TDBGrid
-    Left = 144
+    Left = 160
     Height = 168
-    Top = 104
+    Top = 96
     Width = 560
     Color = clWindow
     Columns = <>
@@ -19,9 +19,9 @@ object FrmLivros: TFrmLivros
     TabOrder = 0
   end
   object Label1: TLabel
-    Left = 368
+    Left = 384
     Height = 49
-    Top = 32
+    Top = 24
     Width = 130
     Caption = 'LIVROS'
     Font.CharSet = ANSI_CHARSET
@@ -48,45 +48,45 @@ object FrmLivros: TFrmLivros
     OnClick = btnVoltarClick
   end
   object Criar: TButton
-    Left = 144
+    Left = 160
     Height = 65
-    Top = 272
+    Top = 264
     Width = 144
     Caption = 'Criar'
     TabOrder = 2
     OnClick = CriarClick
   end
   object Atualizar: TButton
-    Left = 288
+    Left = 304
     Height = 65
-    Top = 272
+    Top = 264
     Width = 136
     Caption = 'Atualizar'
     TabOrder = 3
     OnClick = AtualizarClick
   end
   object Procurar: TButton
-    Left = 424
+    Left = 440
     Height = 66
-    Top = 271
+    Top = 263
     Width = 136
     Caption = 'Procurar'
     TabOrder = 4
     OnClick = ProcurarClick
   end
   object Deletar: TButton
-    Left = 560
+    Left = 576
     Height = 65
-    Top = 272
+    Top = 264
     Width = 144
     Caption = 'Deletar'
     TabOrder = 5
     OnClick = DeletarClick
   end
   object EditCriar: TEdit
-    Left = 144
+    Left = 160
     Height = 36
-    Top = 416
+    Top = 488
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -94,45 +94,45 @@ object FrmLivros: TFrmLivros
     Text = 'EditCriar'
   end
   object CriarLabel: TLabel
-    Left = 144
+    Left = 176
     Height = 45
-    Top = 360
+    Top = 448
     Width = 82
     Caption = 'Titulo'
     Font.Height = -33
     ParentFont = False
   end
   object CriarLabel1: TLabel
-    Left = 144
+    Left = 176
     Height = 45
-    Top = 464
+    Top = 552
     Width = 113
     Caption = 'AutorID'
     Font.Height = -33
     ParentFont = False
   end
   object CriarLabel2: TLabel
-    Left = 424
+    Left = 440
     Height = 45
-    Top = 360
+    Top = 432
     Width = 223
     Caption = 'Ano Publicação'
     Font.Height = -33
     ParentFont = False
   end
   object CriarLabel3: TLabel
-    Left = 424
+    Left = 456
     Height = 45
-    Top = 464
+    Top = 552
     Width = 71
     Caption = 'ISBN'
     Font.Height = -33
     ParentFont = False
   end
   object EditCriar2: TEdit
-    Left = 424
+    Left = 440
     Height = 36
-    Top = 416
+    Top = 488
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -140,9 +140,9 @@ object FrmLivros: TFrmLivros
     Text = 'EditCriar2'
   end
   object EditCriar3: TEdit
-    Left = 144
+    Left = 160
     Height = 36
-    Top = 520
+    Top = 592
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -150,9 +150,9 @@ object FrmLivros: TFrmLivros
     Text = 'EditCriar3'
   end
   object EditCriar4: TEdit
-    Left = 424
+    Left = 440
     Height = 36
-    Top = 520
+    Top = 592
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -160,74 +160,72 @@ object FrmLivros: TFrmLivros
     Text = 'EditCriar4'
   end
   object BtnCriar: TButton
-    Left = 288
+    Left = 319
     Height = 48
-    Top = 600
+    Top = 672
     Width = 272
     Caption = 'BtnCriar'
     TabOrder = 10
     OnClick = BtnCriarClick
   end
   object EditProcurar: TEdit
-    Left = 320
+    Left = 351
     Height = 36
-    Top = 512
+    Top = 504
     Width = 192
     Font.Height = -20
     ParentFont = False
     TabOrder = 11
-    Text = 'EditProcurar'
   end
   object ProcurarLabel: TLabel
-    Left = 320
+    Left = 351
     Height = 45
-    Top = 456
+    Top = 448
     Width = 121
     Caption = 'Procurar'
     Font.Height = -33
     ParentFont = False
   end
   object BtnProcurar: TButton
-    Left = 288
+    Left = 319
     Height = 48
-    Top = 600
+    Top = 672
     Width = 272
     Caption = 'BtnProcurar'
     TabOrder = 12
     OnClick = BtnProcurarClick
   end
   object DeletarLabel: TLabel
-    Left = 320
+    Left = 351
     Height = 45
-    Top = 456
+    Top = 448
     Width = 104
     Caption = 'Deletar'
     Font.Height = -33
     ParentFont = False
   end
   object EditDeletar: TEdit
-    Left = 320
+    Left = 351
     Height = 36
-    Top = 512
+    Top = 504
     Width = 192
     Font.Height = -20
     ParentFont = False
     TabOrder = 13
-    Text = 'EditDeletar'
   end
   object BtnDeletar: TButton
-    Left = 288
+    Left = 319
     Height = 48
-    Top = 600
+    Top = 592
     Width = 272
     Caption = 'BtnDeletar'
     TabOrder = 14
     OnClick = BtnDeletarClick
   end
   object EditAtualizar1: TEdit
-    Left = 145
+    Left = 176
     Height = 36
-    Top = 512
+    Top = 504
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -235,18 +233,18 @@ object FrmLivros: TFrmLivros
     Text = 'EditAtualizar1'
   end
   object AtualizarLabel4: TLabel
-    Left = 144
+    Left = 175
     Height = 45
-    Top = 560
+    Top = 552
     Width = 113
     Caption = 'AutorID'
     Font.Height = -33
     ParentFont = False
   end
   object AtualizarLabel5: TLabel
-    Left = 425
+    Left = 456
     Height = 45
-    Top = 456
+    Top = 448
     Width = 223
     Caption = 'Ano Publicação'
     Font.Height = -33
@@ -254,18 +252,18 @@ object FrmLivros: TFrmLivros
     OnClick = AtualizarLabel5Click
   end
   object AtualizarLabel6: TLabel
-    Left = 425
+    Left = 456
     Height = 45
-    Top = 560
+    Top = 552
     Width = 71
     Caption = 'ISBN'
     Font.Height = -33
     ParentFont = False
   end
   object EditAtualizar5: TEdit
-    Left = 425
+    Left = 456
     Height = 36
-    Top = 512
+    Top = 504
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -273,9 +271,9 @@ object FrmLivros: TFrmLivros
     Text = 'EditAtualizar5'
   end
   object EditAtualizar6: TEdit
-    Left = 145
+    Left = 176
     Height = 36
-    Top = 616
+    Top = 608
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -283,9 +281,9 @@ object FrmLivros: TFrmLivros
     Text = 'EditAtualizar6'
   end
   object EditAtualizar7: TEdit
-    Left = 425
+    Left = 456
     Height = 36
-    Top = 616
+    Top = 608
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -293,18 +291,18 @@ object FrmLivros: TFrmLivros
     Text = 'EditAtualizar7'
   end
   object AtualizarLabel7: TLabel
-    Left = 145
+    Left = 176
     Height = 45
-    Top = 456
+    Top = 448
     Width = 82
     Caption = 'Titulo'
     Font.Height = -33
     ParentFont = False
   end
   object EditAtualizar2: TEdit
-    Left = 273
+    Left = 304
     Height = 36
-    Top = 416
+    Top = 408
     Width = 256
     Font.Height = -20
     ParentFont = False
@@ -312,7 +310,7 @@ object FrmLivros: TFrmLivros
     Text = 'EditAtualizar2'
   end
   object AtualizarLabel8: TLabel
-    Left = 385
+    Left = 415
     Height = 45
     Top = 360
     Width = 32
@@ -321,9 +319,9 @@ object FrmLivros: TFrmLivros
     ParentFont = False
   end
   object BtnAtualizar: TButton
-    Left = 288
+    Left = 319
     Height = 48
-    Top = 680
+    Top = 672
     Width = 272
     Caption = 'BtnAtualizar1'
     TabOrder = 20
@@ -331,12 +329,12 @@ object FrmLivros: TFrmLivros
   end
   object DataSource1: TDataSource
     DataSet = ZQuery1
-    Left = 560
-    Top = 48
+    Left = 576
+    Top = 40
   end
   object ZQuery1: TZQuery
     Params = <>
-    Left = 616
-    Top = 48
+    Left = 632
+    Top = 40
   end
 end

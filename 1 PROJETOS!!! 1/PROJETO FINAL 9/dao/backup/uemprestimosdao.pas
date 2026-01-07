@@ -19,6 +19,7 @@ type
     function CarregarEmprestimos: TListaEmprestimos;
     constructor Create(AConnection: TZConnection);
     procedure ListarEmprestimosParaDataset(AQuery: TZQuery);
+    procedure ListarEmprestimosPorId(AQuery: TZQuery; Id : Integer);
   end;
 
 implementation
@@ -28,17 +29,43 @@ begin
   FConnection := AConnection;
 end;
 
-procedure TEmprestimoDAO.ListarEmprestimosParaDataset(AQuery: TZQuery);
+procedure TEmprestimosDAO.ListarEmprestimosParaDataset(AQuery: TZQuery);
 begin
-  AQuery.Connection := FConnection;
+  AQuery.Connection := GetConnection;
   AQuery.Close;
   AQuery.SQL.Clear;
 
-  AQuery.SQL.Add('SELECT E.ID, U.NOME AS USUARIO, L.TITULO AS LIVRO, E.DATA_EMPRESTIMO, E.DATA_DEVOLUCAO');
-  AQuery.SQL.Add('FROM EMPRESTIMOS E');
-  AQuery.SQL.Add('INNER JOIN USUARIOS U ON U.ID = E.USUARIO_ID');
-  AQuery.SQL.Add('INNER JOIN LIVROS L ON L.ID = E.LIVRO_ID');
-  AQuery.SQL.Add('ORDER BY E.DATA_EMPRESTIMO DESC');
+  AQuery.SQL.Add('SELECT EMPRESTIMOS.ID, USUARIOS.NOME AS USUARIO, LIVROS.TITULO AS LIVRO, EMPRESTIMOS.DATA_EMPRESTIMO, EMPRESTIMOS.DATA_DEVOLUCAO');
+  AQuery.SQL.Add('FROM EMPRESTIMOS');
+  AQuery.SQL.Add('INNER JOIN USUARIOS ON USUARIOS.ID = EMPRESTIMOS.USUARIO_ID');
+  AQuery.SQL.Add('INNER JOIN LIVROS ON LIVROS.ID = EMPRESTIMOS.LIVRO_ID');
+  AQuery.SQL.Add('ORDER BY EMPRESTIMOS.DATA_EMPRESTIMO DESC');
+
+  AQuery.Open;
+end;
+
+procedure TEmprestimosDAO.ListarEmprestimosPorId(AQuery: TZQuery; ID : Integer);
+begin
+  AQuery.Connection := GetConnection;
+  AQuery.Close;
+  AQuery.SQL.Clear;
+
+  AQuery.SQL.Add('SELECT EMPRESTIMOS.ID, USUARIOS.NOME AS USUARIO, LIVROS.TITULO AS LIVRO, EMPRESTIMOS.DATA_EMPRESTIMO, EMPRESTIMOS.DATA_DEVOLUCAO');
+
+  AQuery.SQL.Add('FROM EMPRESTIMOS');
+
+  AQuery.SQL.Add('INNER JOIN USUARIOS ON USUARIOS.ID = EMPRESTIMOS.USUARIO_ID');
+  AQuery.SQL.Add('INNER JOIN LIVROS ON LIVROS.ID = EMPRESTIMOS.LIVRO_ID');
+
+  if UsuarioID > 0 then
+  begin
+    AQuery.SQL.Add('WHERE EMPRESTIMOS.USUARIO_ID = :USUARIO_ID');
+  end;
+
+  AQuery.SQL.Add('ORDER BY EMPRESTIMOS.DATA_EMPRESTIMO DESC');
+
+  if UsuarioID > 0 then
+    AQuery.ParamByName('USUARIO_ID').AsInteger := ID;
 
   AQuery.Open;
 end;
